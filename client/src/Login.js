@@ -31,7 +31,7 @@ function Login({ setUser }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
-        navigate("/home")
+        navigate("/main")
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -94,7 +94,7 @@ function Login({ setUser }) {
           <div>
             <br></br>
             Don't have an account?&nbsp;
-            <a href="/sign-up">Sign up</a>
+            <a href="/sign-up">Sign up now!</a>
             <br></br>
             <br></br>
           </div>

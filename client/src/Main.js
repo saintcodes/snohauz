@@ -1,8 +1,15 @@
 import React from 'react'
 
-function Main() {
+function Main({open}) {
   return (
-    <div>Main</div>
+    <div 
+      style={{
+        marginLeft: 350,
+        marginTop: 50
+      }}
+    >
+      Main
+    </div>
   )
 }
 
