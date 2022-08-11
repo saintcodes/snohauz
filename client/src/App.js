@@ -37,7 +37,7 @@ function App() {
           />}
         />
         <Route 
-          exact path="/my-profile"
+          exact path="/profile"
           element={<UserProfile 
             user={user}
             setUser={setUser}

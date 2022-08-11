@@ -1,14 +1,15 @@
 import React , { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Nav, Container } from 'react-bootstrap'
 import { styled, useTheme } from '@mui/material/styles'
 import { Avatar, IconButton, Box, Drawer, CssBaseline, AppBar, Toolbar, List, Typography, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import HomeIcon from '@mui/icons-material/Home'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import MenuIcon from '@mui/icons-material/Menu'
 import LogoutIcon from '@mui/icons-material/Logout';
+import BookOnlineIcon from '@mui/icons-material/BookOnline';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import Main from './Main'
-// import IconButton from '@mui/icons-material/IconButton'
 
 function Navigate({user, setUser}) {
   const navigate = useNavigate()
@@ -74,8 +75,10 @@ function Navigate({user, setUser}) {
     })
     .then(navigate("/"));
   }
-  console.log(user)
 
+  const handleNavigate = (e) => {
+    navigate(`/${e.target.innerHTML}`)
+  }
 
   return ( 
     <Box sx={{ display: 'flex' }}>
@@ -91,8 +94,8 @@ function Navigate({user, setUser}) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            LOGO goes here
+          <Typography variant="h6" noWrap component="div" onClick={() => navigate('/main')}>
+            snohous
           </Typography>
         </Toolbar>
       </MuiAppBar>
@@ -114,13 +117,14 @@ function Navigate({user, setUser}) {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
+        <div><img style={{maxWidth: 250}} alt="user" src={user.image}/></div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {['Main', 'Reservations', 'Profile'].map((text, index) => (
             <ListItem key={text} disablePadding>
-              <ListItemButton>
+              <ListItemButton onClick={handleNavigate}>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <LogoutIcon /> : <LogoutIcon />}
+                  {text === 'Main' ? <HomeIcon /> : text === 'Reservations' ? <BookOnlineIcon /> : <AccountBoxIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
@@ -130,7 +134,7 @@ function Navigate({user, setUser}) {
         <Divider />
         <List>
           <ListItem key={'logout'} disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={handleLogout}>
               <ListItemIcon>
                 <LogoutIcon/>
               </ListItemIcon>
@@ -142,10 +146,9 @@ function Navigate({user, setUser}) {
       <br/>
       <br/>
       <br/>
-      <br/>
-      <br/>
       <Main open={open}/>
     </Box>
+
       // <Container className="navigation-container">
       //    {user && user.username ? (
       //   <Nav id='nav-bar'>
