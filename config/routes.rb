@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :shop_addresses
+  resources :shop_addresses, only: [:index, :show]
   resources :reservations
   resources :reviews
-  resources :products
-  resources :addresses
-  resources :shops
+  resources :products, only: [:index, :show]
+  resources :shops, only: [:index, :show]
   resources :users
 
   post '/signup', to: "users#create"

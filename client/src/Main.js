@@ -1,14 +1,22 @@
 import React from 'react'
 
 function Main({open}) {
+
+  fetch()
+
   return (
     <div 
       style={{
-        marginLeft: 350,
-        marginTop: 50
+        marginLeft: 50,
+        marginTop: 50,
+        marginRight: 50
       }}
     >
-      Main
+      All Shops
+      <hr/>
+
+      All Products
+      <hr/>
     </div>
   )
 }
