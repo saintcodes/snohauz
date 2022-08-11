@@ -13,43 +13,50 @@ s1 = Shop.create(
   name: "SPORTIVA SKI OUTLET NYC",
   hours: "06:00 AM to 06:00 PM",
   description: "NYC's Go-To Ski/Snowboard Rental Shop",
-  phone: "(646) 476-5056"
+  phone: "(646) 476-5056",
+  image: "https://www.famousinternetskiers.com/wp-content/uploads/2013/09/gg-0361.jpg"
 )
 s2 = Shop.create(
   name: "Burton New York City Flagship Store",
   hours: "12:00 PM to 06:00 PM",
   description: "Hip chain for snowboards, boots, apparel & outerwear for men, women & kids.",
-  phone: "(212) 966-8070"
+  phone: "(212) 966-8070",
+  image: "https://s3-media0.fl.yelpcdn.com/bphoto/0zyFNYjCn5RrjiYzC7MFAQ/o.jpg"
 )
 s3 = Shop.create(
   name: "Bomber Ski",
   hours: "09:00 AM to 05:00 PM",
   description: "Flagship boutique of the luxury ski maker offering handcrafted skis, poles & other accessories",
-  phone: "(212) 980-2442"
+  phone: "(212) 980-2442", 
+  image: "https://cdn.shopify.com/s/files/1/0441/3672/6677/files/2_3825c051-7e0d-4ef9-93b9-c2b58316b97e.jpg?v=1649431787"
 )
 s4 = Shop.create(
   name: "Surefoot",
   hours: "11:00 AM to 06:00 PM",
   description: "Retailer specializing in high-end, comfort-focused ski boots with custom liners & insoles",
-  phone: "(212) 472-7171"
+  phone: "(212) 472-7171", 
+  image: "https://s3-media0.fl.yelpcdn.com/bphoto/ylFC5PLeR7mxwS8T535Saw/o.jpg"
 )
 s5 = Shop.create(
   name: "LEASE-A-SKI N Y C",
   hours: "12:00 PM to 06:30 PM",
   description: "Ski Rental Business",
-  phone: "(646) 746-5085"
+  phone: "(646) 746-5085",
+  image: "https://s3-media0.fl.yelpcdn.com/bphoto/dfqAX4l5tm2H55SMTY_yPA/o.jpg"
 )
 s6 = Shop.create(
   name: "REI",
   hours: "10:00 AM to 08:00 PM",
   description: "Retail chain carrying gear, apparel & footwear for a wide range of outdoor & fitness activities",
-  phone: "(646) 746-5085"
+  phone: "(646) 746-5085",
+  image: "https://s3-media0.fl.yelpcdn.com/bphoto/AOlwW5ATulgPgROyIz9OgA/o.jpg"
 )
 s7 = Shop.create(
   name: "Mount Everest - Westwood",
   hours: "10:00 AM to 06:00 PM",
   description: "Snowboard Shop",
-  phone: "(201) 664-2500"
+  phone: "(201) 664-2500", 
+  image: "https://s3-media0.fl.yelpcdn.com/bphoto/RBPSR-snOXP_pLISwTQ9PA/o.jpg"
 )
 
 
@@ -62,17 +69,17 @@ sa1 = ShopAddress.create(
   shop_id: s1.id
 )
 sa2 = ShopAddress.create(
-  street: "217 E 60th St Lower Level",
+  street: "69 Greene St",
   city: "New York",
   state: "NY",
-  zip_code: 10065,
+  zip_code: 10012,
   shop_id: s2.id
 )
 sa3 = ShopAddress.create(
-  street: "217 E 60th St Lower Level",
+  street: "681 5th Ave Penthouse",
   city: "New York",
   state: "NY",
-  zip_code: 10065,
+  zip_code: 10022,
   shop_id: s3.id
 )
 sa4 = ShopAddress.create(
