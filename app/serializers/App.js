@@ -19,8 +19,6 @@ function App() {
     });
   }, []);
 
-  console.log("outside fetch:", user)
-
   return (
     <div>
     {user && user.username ?

@@ -7,6 +7,8 @@ import UserProfile from './UserProfile'
 import Reservations from './Reservations'
 import Main from './Main'
 import Login from './Login'
+import Shops from './Shops'
+import Products from './Products'
 
 function App() {
   const [user, setUser] = useState({})
@@ -18,8 +20,6 @@ function App() {
       }
     });
   }, []);
-
-  console.log("outside fetch:", user)
 
   return (
     <div>
@@ -46,6 +46,18 @@ function App() {
         <Route 
           exact path="/reservations"
           element={<Reservations 
+            user={user}
+          />}
+        />
+        <Route 
+          exact path="/products/:name"
+          element={<Products 
+            user={user}
+          />}
+        />
+        <Route 
+          exact path="/shops/:name"
+          element={<Shops 
             user={user}
           />}
         />

@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { TextField, Box, IconButton, Stack, ImageList, ImageListItemBar, ImageListItem} from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info';
+import { useNavigate } from 'react-router-dom'
+import Shops from './Shops'
+import Products from './Products'
 
-function Main({open}) {
+function Main() {
   const [shops, setShops] = useState([])
+  const [shop, setShop] = useState({})
   const [products, setProducts] = useState([])
   const [searchShop, setSearchShop] = useState("")
   const [searchProduct, setSearchProduct] = useState("")
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch('./shops')
@@ -22,13 +27,21 @@ function Main({open}) {
 
   const searchShops = shops.filter((shop) => shop.name.toLowerCase().includes(searchShop.toLowerCase()))
   const searchProducts = products.filter((product) => product.name.toLowerCase().includes(searchProduct.toLowerCase()))
-  
-  const handleShopSearch = (e) => {
-    setSearchShop(e.target.value)
+  const handleShopSearch = (e) => {setSearchShop(e.target.value)}
+  const handleProductSearch = (e) => {setSearchProduct(e.target.value)}
+
+  function renderProduct(product) {
+    fetch(`products/${product.id}`)
+      .then(res => res.json())
+      .then(product => console.log(product))
+      .then(navigate(`/products/${product.name}`))
   }
 
-  const handleProductSearch = (e) => {
-    setSearchProduct(e.target.value)
+  function renderShop(shop) {
+    fetch(`shops/${shop.id}`)
+      .then(res => res.json())
+      .then(shop => setShop(shop))
+      .then(navigate(`/shops/${shop.name}`))
   }
 
   return (
@@ -53,8 +66,8 @@ function Main({open}) {
         <div> 
           <TextField 
             fullWidth
-            id="Outlined secondary fullwidth" 
-            color="secondary" 
+            id="Outlined warning fullwidth" 
+            color="warning" 
             label="Search shop name" 
             focused
             type="search"
@@ -97,7 +110,7 @@ function Main({open}) {
               actionIcon={
                 <IconButton
                   sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  onClick={() => (console.log('hello'))}
+                  onClick={() => renderShop(shop)}
                 >
                   <InfoIcon />
                 </IconButton>
@@ -107,14 +120,12 @@ function Main({open}) {
             </ImageListItem>
           ))}
         </ImageList>
-      <br/>
-      <br/>
-      <br/>
+      <br/><br/><br/>
         <span style={{fontSize: "x-large"}}>
           <strong><em>All Products</em></strong>
         </span>      
         <hr/>
-        <Box
+      <Box
         sx={{
           '& .MuiTextField-root': { m: 1, width: '25ch' },
         }}
@@ -124,8 +135,8 @@ function Main({open}) {
         <div> 
           <TextField 
             fullWidth
-            id="Outlined secondary fullwidth" 
-            color="secondary" 
+            id="Outlined warning fullwidth" 
+            color="warning" 
             label="Search by Product" 
             focused
             type="search" 
@@ -152,7 +163,6 @@ function Main({open}) {
           {searchProducts.map((product) => (
             <ImageListItem
             key={product.id}
-            onClick={() => (console.log('hello'))}
             sx={{
               '&:hover': {
                 color: 'red', 
@@ -166,7 +176,6 @@ function Main({open}) {
                 src={`${product.image}?w=248&fit=crop&auto=format`}
                 srcSet={`${product.image}?w=248&fit=crop&auto=format&dpr=2 1x`}
                 alt={product.id}
-                // value={product.user_id}
                 loading="lazy"
               />
             <ImageListItemBar
@@ -175,7 +184,7 @@ function Main({open}) {
               actionIcon={
                 <IconButton
                   sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  onClick={() =>(console.log('hello'))}
+                  onClick={() => renderProduct(product)}
                 >
                   <InfoIcon />
                 </IconButton>

@@ -48,3 +48,10 @@
   max-width: 100%;
   /* width: 200px; */
 }
+
+h3.logo-header {
+  font-family: 'Square Peg', cursive;
+  font-size: xx-large;
+  /* margin-left: 1%; */
+
+}

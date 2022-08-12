@@ -95,7 +95,7 @@ function Navigate({user, setUser}) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" onClick={() => navigate('/main')}>
-            snohous
+          <h3 className='logo-header'>snohaus</h3>
           </Typography>
         </Toolbar>
       </MuiAppBar>
@@ -146,38 +146,8 @@ function Navigate({user, setUser}) {
       <br/>
       <br/>
       <br/>
-      <Main open={open}/>
+      <Main />
     </Box>
-
-      // <Container className="navigation-container">
-      //    {user && user.username ? (
-      //   <Nav id='nav-bar'>
-      //     <h3 className='logo-header'>SnoHauz</h3>
-      //     <br></br>
-      //       <span className='user-span'>
-      //         Welcome, <strong><em>{user.username}!</em></strong>
-      //       </span>
-      //       &nbsp;&nbsp;
-      //         <Avatar alt={user.username} src={user.image} /> 
-      //     <br></br>
-      //     <ul><Nav.Link href="/main">
-      //       All Shops & Products
-      //     </Nav.Link></ul>
-      //     <br/>
-      //     <ul><Nav.Link href="/reservations">
-      //       Reservations
-      //     </Nav.Link></ul>
-      //     <br/>
-      //     <ul><Nav.Link href="/my-profile">
-      //       Profile
-      //     </Nav.Link></ul>
-      //     <br/>
-      //     <ul><Nav.Link href="/" onClick={() => handleLogout()}>
-      //       Logout
-      //     </Nav.Link></ul>
-      //   </Nav>
-      // ): null}
-      // </Container>
   )
 }
 
