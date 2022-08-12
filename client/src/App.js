@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
 import Navigate from './Navigate'
 import SignUp from './SignUp'
@@ -8,10 +8,12 @@ import Reservations from './Reservations'
 import Main from './Main'
 import Login from './Login'
 import Shops from './Shops'
-import Products from './Products'
+import Products from './Products';
 
 function App() {
   const [user, setUser] = useState({})
+  const [shop, setShop] = useState({})
+  const [product, setProduct] = useState({})
 
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -20,6 +22,16 @@ function App() {
       }
     });
   }, []);
+
+  function selectedShop(shop) {
+    console.log(shop)
+    setShop(shop)
+  }
+
+  function selectedProduct(product) {
+    console.log(product)
+    setProduct(product)
+  }
 
   return (
     <div>
@@ -53,18 +65,22 @@ function App() {
           exact path="/products/:name"
           element={<Products 
             user={user}
-          />}
-        />
+            product={product}
+            />}
+            />
         <Route 
           exact path="/shops/:name"
           element={<Shops 
             user={user}
-          />}
-        />
+            shop={shop}
+            />}
+            />
         <Route 
-          exact path="/main"
+          exact path="/main/*"
           element={<Main 
             user={user}
+            selectedShop={selectedShop}
+            selectedProduct={selectedProduct}
           />}
         />
         <Route exact path="/"

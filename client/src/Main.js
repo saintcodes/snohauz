@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { TextField, Box, IconButton, Stack, ImageList, ImageListItemBar, ImageListItem} from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info';
 import { useNavigate } from 'react-router-dom'
 import Shops from './Shops'
 import Products from './Products'
 
-function Main() {
+function Main({user, selectedProduct, selectedShop}) {
   const [shops, setShops] = useState([])
-  const [shop, setShop] = useState({})
   const [products, setProducts] = useState([])
   const [searchShop, setSearchShop] = useState("")
   const [searchProduct, setSearchProduct] = useState("")
@@ -33,18 +33,20 @@ function Main() {
   function renderProduct(product) {
     fetch(`products/${product.id}`)
       .then(res => res.json())
-      .then(product => console.log(product))
+      .then(selectedProduct)
       .then(navigate(`/products/${product.name}`))
   }
 
   function renderShop(shop) {
     fetch(`shops/${shop.id}`)
       .then(res => res.json())
-      .then(shop => setShop(shop))
+      .then(selectedShop)
       .then(navigate(`/shops/${shop.name}`))
-  }
+      console.log(shop)
+    }
 
   return (
+    <>
     <Stack
       sx={{
         position: "absolute",
@@ -82,7 +84,7 @@ function Main() {
             position: "relative", 
             top: 0,
             left: 0,
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             '&:hover': {
               color: 'red',
               backgroundColor: 'primary'
@@ -124,7 +126,7 @@ function Main() {
         <span style={{fontSize: "x-large"}}>
           <strong><em>All Products</em></strong>
         </span>      
-        <hr/>
+      <hr/>
       <Box
         sx={{
           '& .MuiTextField-root': { m: 1, width: '25ch' },
@@ -193,8 +195,9 @@ function Main() {
             />
             </ImageListItem>
           ))}
-        </ImageList>
+        </ImageList> 
     </Stack>
+  </>
   )
 }
 

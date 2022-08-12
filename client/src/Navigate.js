@@ -1,7 +1,7 @@
 import React , { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { styled, useTheme } from '@mui/material/styles'
-import { Avatar, IconButton, Box, Drawer, CssBaseline, AppBar, Toolbar, List, Typography, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import { IconButton, Box, Drawer, CssBaseline, AppBar, Toolbar, List, Typography, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 import LogoutIcon from '@mui/icons-material/Logout';
 import BookOnlineIcon from '@mui/icons-material/BookOnline';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import Main from './Main'
 
 function Navigate({user, setUser}) {
   const navigate = useNavigate()

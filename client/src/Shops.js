@@ -5,10 +5,14 @@ function Shops({shop}) {
   console.log(shop)
   return ( 
     <Container>
-      {/* {shop.name} */}
       <br/>
       <br/>
       <br/>
+      <h3>{shop.name}</h3>
+      <h3>{shop.name}</h3>
+      <h3>{shop.name}</h3>
+      <h3>{shop.name}</h3>
+      <h3>{shop.name}</h3>
       <br/>
       <br/>
       <br/>
