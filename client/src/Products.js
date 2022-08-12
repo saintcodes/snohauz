@@ -1,49 +1,40 @@
 import React from 'react'
+import { Button } from '@mui/material'
 
 function Products({product}) {
-  console.log(product)
+  
+  
   return (
-    <div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+    <>
+      <div style={{
+        position: "absolute",
+        marginLeft: 30,
+        marginTop: 30,
+        marginRight: 15
+      }}>
+        <br/>
+        <br/>     
+        <h1>{product.name}</h1>
+      <div style={{
+          position: "relative",
+          marginLeft: 700,
+          marginTop: 40,
+          marginBottom: 0,
+          marginRight: 460
+        }}>
+        <h3><em>{product.description}</em></h3>
+        <h2><em>Price: </em>${product.price}</h2>
+        <Button variant="contained">Rent Me!</Button>
+      </div>
+      <img style={{
+        position: "relative",
+        marginBottom: 80,
+        marginTop: -200
+      }}
+      alt={product.description} src={product.image}/>
 
-
-      <h3>{product.name}</h3>
-      <h3>{product.name}</h3>
-      <h3>{product.name}</h3>
-      <h3>{product.name}</h3>
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-      PRODUCTS
-    </div>
+      </div>
+    </>
   )
 }
 

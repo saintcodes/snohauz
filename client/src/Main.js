@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
 import { TextField, Box, IconButton, Stack, ImageList, ImageListItemBar, ImageListItem} from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info';
 import { useNavigate } from 'react-router-dom'
-import Shops from './Shops'
-import Products from './Products'
+
 
 function Main({user, selectedProduct, selectedShop}) {
   const [shops, setShops] = useState([])
@@ -47,13 +45,12 @@ function Main({user, selectedProduct, selectedShop}) {
 
   return (
     <>
-    <Stack
-      sx={{
-        position: "absolute",
-        marginLeft: 10,
-        marginTop: 10,
-        marginRight: 15 
-      }}>
+    <Stack sx={{
+      position: "absolute",
+      marginLeft: 10,
+      marginTop: 10,
+      marginRight: 15 
+    }}>
         <span style={{fontSize: "x-large"}}>
           <strong><em>All Shops</em></strong>
         </span>

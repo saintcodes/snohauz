@@ -12,12 +12,10 @@ function Login({ setUser }) {
   });
 
   const handleChange = (e) => {
-    console.log('hello')
     const {name, value} = e.target
     setFormData((formData) => ({...formData,
       [name]: value
     }))
-    console.log(formData)
   }
 
   function handleSubmit(e) {
