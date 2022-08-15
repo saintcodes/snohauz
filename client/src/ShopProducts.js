@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
 import { Button, Stack, Grid, Modal, FormControl, TextField, Box, Typography } from '@mui/material'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
-function ShopProducts({shopProducts}) {
+function ShopProducts({shopProducts, shop}) {
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("")
   const [selectedProduct, setSelectedProduct] = useState({
     "name": "",
     "description": ""
@@ -19,8 +23,12 @@ function ShopProducts({shopProducts}) {
     boxShadow: 24,
     p: 4,
   };
+  
+  function handleReservation (e) {
+    console.log(e.target)
+  }
 
-  const handleReserve = (product) => {
+  const handleOpen = (product) => {
     setOpen(true)
     setSelectedProduct(product)
   }
@@ -28,6 +36,7 @@ function ShopProducts({shopProducts}) {
   const handleClose = () => {
     setOpen(false)
   }
+console.log(value)
 
   return (
     <Stack 
@@ -43,6 +52,7 @@ function ShopProducts({shopProducts}) {
     >
       {shopProducts.map(product => 
         <Grid
+          key={product.id}
           sx={{
             border: 1,
             borderColor: 'primary.main',
@@ -56,18 +66,18 @@ function ShopProducts({shopProducts}) {
             src={product.image} 
             alt={product.name}
           />
-          <div
-            style={{position: "relative", left: 450, top: -350, maxWidth: "60%"}}
-          >
-            <h3>
-              {product.name}
-            </h3>
+          <div style={{position: "relative", left: 450, top: -350, maxWidth: "60%"}}>
+            <h3>{product.name}</h3>
             <br/>
-            <span>
-              {product.description}
-            </span>
+            <span>{product.description}</span>
             <br/><br/>
-            <Button onClick={() => handleReserve(product)} color="secondary" variant="contained">Reserve Now!</Button>
+            <Button 
+              onClick={() => handleOpen(product)} 
+              color="secondary" 
+              variant="contained"
+            >
+              Reserve Now!
+            </Button>
           </div>
         </Grid>
       )}
@@ -82,8 +92,33 @@ function ShopProducts({shopProducts}) {
           <span style={{display: 'flex'}}>
           <strong><em>{selectedProduct.name}</em></strong>
           </span>
+          <p>{shop.name}</p>
         </Typography>
+        <br/>
+        <LocalizationProvider
+          dateAdapter={AdapterDateFns}
+        >
+          <DateTimePicker
+            color="primary"
+            renderInput={(props) => <TextField {...props} />}
+            label="DateTimePicker"
+            value={value}
+            onChange={
+              (newValue) => {
+              setValue(newValue);
+            }
+          }
+          />
+          <br/>
           <br></br>
+          <Button 
+            onClick={handleReservation} 
+            variant="contained" 
+            color="success"
+          >
+            Confirm Reservation
+          </Button>
+        </LocalizationProvider>
         </Box>
       </Modal>
       : null}

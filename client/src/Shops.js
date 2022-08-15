@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
 import { Button, Container } from '@mui/material'
 import ShopProducts from './ShopProducts'
 
 
 function Shops({shop}) {
-  const navigate = useNavigate()
   const [shopProducts, setShopProducts] = useState([])
   const [show, setShow] = useState(false)
 
   function renderShopProducts(shop) {
-    console.log(shop.name, shop.id)
     setShow(show => !show)
-    // navigate(`shops/${shop.id}/products`)
     fetch(`/shops/${shop.id}`)
       .then(res => res.json())
       .then(shopProducts => setShopProducts(shopProducts.products))
@@ -65,7 +61,7 @@ function Shops({shop}) {
         </div>
       </Container>
       <Container>
-        {show ? <ShopProducts shopProducts={shopProducts}/> : null}
+        {show ? <ShopProducts shop={shop} shopProducts={shopProducts}/> : null}
       </Container>
     </>
   )
