@@ -40,7 +40,7 @@ function Shops({shop}) {
             src={shop.image}
             loading="lazy"
           />
-          <div style={{position: 'relative', marginLeft: 650, marginTop: -330}}>
+          <div style={{position: 'relative', marginLeft: 580, marginTop: -330}}>
             <h3>{shop.description}</h3>
             <span>Hours: 
             <br/>{shop.hours}</span>

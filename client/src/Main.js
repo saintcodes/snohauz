@@ -66,7 +66,7 @@ function Main({user, selectedProduct, selectedShop}) {
             fullWidth
             id="Outlined warning fullwidth" 
             color="warning" 
-            label="Search shop name" 
+            label="Search by Shop Name" 
             focused
             type="search"
             onChange={handleShopSearch}
@@ -80,11 +80,7 @@ function Main({user, selectedProduct, selectedShop}) {
             position: "relative", 
             top: 0,
             left: 0,
-            backgroundColor: 'black',
-            '&:hover': {
-              color: 'red',
-              backgroundColor: 'primary'
-            }
+            backgroundColor: 'transparent',
           }} 
           cols={4}
           gap={24}
@@ -93,7 +89,7 @@ function Main({user, selectedProduct, selectedShop}) {
             <ImageListItem
             key={shop.id}
             // onClick={()=>handleOpen(shop)}
-            sx={{'&:hover': {color: 'red', backgroundColor: 'white'}}}  
+            sx={{border: 1}}  
             >
               <img
                 src={`${shop.image}?w=248&fit=crop&auto=format`}
@@ -135,7 +131,7 @@ function Main({user, selectedProduct, selectedShop}) {
             fullWidth
             id="Outlined warning fullwidth" 
             color="warning" 
-            label="Search by Product" 
+            label="Search by Product Name" 
             focused
             type="search" 
             onChange={handleProductSearch}
@@ -149,7 +145,7 @@ function Main({user, selectedProduct, selectedShop}) {
             position: "relative", 
             top: 0,
             left: 0,
-            backgroundColor: 'black',
+            backgroundColor: 'transparent',
             '&:hover': {
               color: 'red',
               backgroundColor: 'white'
@@ -160,14 +156,8 @@ function Main({user, selectedProduct, selectedShop}) {
         >
           {searchProducts.map((product) => (
             <ImageListItem
-            key={product.id}
-            sx={{
-              '&:hover': {
-                color: 'red', 
-                backgroundColor: 'white',
-                fit: ""
-              }
-            }}
+              key={product.id}
+              sx={{border: 1}}
             >
               <img
                 className="photo"

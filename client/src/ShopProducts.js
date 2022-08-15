@@ -1,8 +1,34 @@
-import React from 'react'
-import { Button, Stack, Grid } from '@mui/material'
+import React, {useState} from 'react'
+import { Button, Stack, Grid, Modal, FormControl, TextField, Box, Typography } from '@mui/material'
 
 function ShopProducts({shopProducts}) {
-  console.log(shopProducts)
+  const [open, setOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState({
+    "name": "",
+    "description": ""
+  })
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const handleReserve = (product) => {
+    setOpen(true)
+    setSelectedProduct(product)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
   return (
     <Stack 
       spacing={2}
@@ -40,12 +66,27 @@ function ShopProducts({shopProducts}) {
             <span>
               {product.description}
             </span>
-            <br/>
-            <br/>
-            <Button color="secondary" variant="contained">Reserve Now!</Button>
+            <br/><br/>
+            <Button onClick={() => handleReserve(product)} color="secondary" variant="contained">Reserve Now!</Button>
           </div>
         </Grid>
       )}
+       {open ? <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <span style={{display: 'flex'}}>
+          <strong><em>{selectedProduct.name}</em></strong>
+          </span>
+        </Typography>
+          <br></br>
+        </Box>
+      </Modal>
+      : null}
     </Stack>
   )
 }
