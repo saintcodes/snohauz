@@ -40,7 +40,6 @@ function Main({user, selectedProduct, selectedShop}) {
       .then(res => res.json())
       .then(selectedShop)
       .then(navigate(`/shops/${shop.name}`))
-      console.log(shop)
     }
 
   return (

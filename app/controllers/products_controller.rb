@@ -10,5 +10,9 @@ class ProductsController < ApplicationController
     render json: product, status: :ok
   end
 
+  def shop
+    products = Product.where("shop_id": params[:id])
+    render json: products, status: :ok
+  end
   
 end
