@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
 
   def index
     reservations = Reservation.all
-    render json: reservations, status: :ok
+    render json: reservations.to_json(include: [:product, :shop]), status: :ok
   end
 
   def show
@@ -23,14 +23,20 @@ class ReservationsController < ApplicationController
 
   def destroy
     res = Reservation.find(params[:id])
-    res.destroy
+    res.destroy!
     head :no_content
+  end
+
+  def my_reso
+    reso = Reservation.where(user_id: session[:user_id])
+    # render json: reso.to_json (:include=> {:shop=>{:include=> {:shop_address}}}, :product)
+    render json: reso.to_json(include: [:product, :shop]), status: :ok
   end
 
 private
 
   def res_params
-    params.permit(:date, :time)
+    params.permit(:user_id, :product_id, :shop_id, :date, :time)
   end
   
 end

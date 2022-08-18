@@ -1,16 +1,18 @@
 import React, {useState} from 'react'
-import { Button, Stack, Grid, Modal, FormControl, TextField, Box, Typography } from '@mui/material'
+import { Button, Stack, Grid, Modal, TextField, Box, Typography } from '@mui/material'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { useNavigate } from 'react-router-dom'
 
-function ShopProducts({shopProducts, shop}) {
+function ShopProducts({user, shopProducts, shop}) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState(null)
   const [selectedProduct, setSelectedProduct] = useState({
     "name": "",
     "description": ""
   })
+  const navigate = useNavigate()
 
   const style = {
     position: 'absolute',
@@ -24,8 +26,31 @@ function ShopProducts({shopProducts, shop}) {
     p: 4,
   };
   
-  function handleReservation (e) {
-    console.log(e.target)
+  function handleReservation (selectedProduct) {
+    let dateTime = value.toString()
+    let date = dateTime.slice(4,15)
+    let h = value.getHours()
+    let AMorPM = h < 12 ? "AM":"PM"
+    let minutes = value.getMinutes()
+    let hours = ((h + 11) % 12 + 1)
+    let time = `${hours}:${minutes} ${AMorPM}`
+    console.log(dateTime, value, date, hours, minutes, time)
+    fetch('/reservations', {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": JSON.stringify({
+        user_id: user.id,
+        product_id: selectedProduct.id,
+        shop_id: shop.id,
+        date: date,
+        time: time
+      })
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .then(navigate('/reservations'))
   }
 
   const handleOpen = (product) => {
@@ -36,7 +61,6 @@ function ShopProducts({shopProducts, shop}) {
   const handleClose = () => {
     setOpen(false)
   }
-console.log(value)
 
   return (
     <Stack 
@@ -92,7 +116,8 @@ console.log(value)
           <span style={{display: 'flex'}}>
           <strong><em>{selectedProduct.name}</em></strong>
           </span>
-          <p>{shop.name}</p>
+          <br/>
+          <span>{shop.name}</span>
         </Typography>
         <br/>
         <LocalizationProvider
@@ -100,19 +125,16 @@ console.log(value)
         >
           <DateTimePicker
             color="primary"
+            clearable
             renderInput={(props) => <TextField {...props} />}
             label="DateTimePicker"
             value={value}
-            onChange={
-              (newValue) => {
-              setValue(newValue);
-            }
-          }
+            onChange={(newValue) => {setValue(newValue)}}
           />
           <br/>
           <br></br>
           <Button 
-            onClick={handleReservation} 
+            onClick={() => handleReservation(selectedProduct)} 
             variant="contained" 
             color="success"
           >

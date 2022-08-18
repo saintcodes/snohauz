@@ -23,15 +23,10 @@ function App() {
       }
     });
   }, []);
+  
+  function selectedShop(shop) {setShop(shop)}
 
-  function selectedShop(shop) {
-    setShop(shop)
-  }
-
-  function selectedProduct(product) {
-    console.log(product)
-    setProduct(product)
-  }
+  function selectedProduct(product) {setProduct(product)}
 
   return (
     <div>
@@ -62,7 +57,7 @@ function App() {
           />}
         />
         <Route 
-          exact path="/products/:name"
+          exact path="/products/:id"
           element={<Products 
             user={user}
             product={product}
@@ -75,13 +70,13 @@ function App() {
             shop={shop}
           />}
         />
-        <Route 
+        {/* <Route 
           exact path="/shops/:id/products"
           element={<ShopProducts 
             user={user}
             shop={shop}
           />}
-        />
+        /> */}
         <Route 
           exact path="/main"
           element={<Main 

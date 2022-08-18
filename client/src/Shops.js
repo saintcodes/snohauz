@@ -3,7 +3,7 @@ import { Button, Container } from '@mui/material'
 import ShopProducts from './ShopProducts'
 
 
-function Shops({shop}) {
+function Shops({user, shop}) {
   const [shopProducts, setShopProducts] = useState([])
   const [show, setShow] = useState(false)
 
@@ -61,7 +61,12 @@ function Shops({shop}) {
         </div>
       </Container>
       <Container>
-        {show ? <ShopProducts shop={shop} shopProducts={shopProducts}/> : null}
+        {show ? 
+        <ShopProducts 
+          user={user} 
+          shop={shop} 
+          shopProducts={shopProducts}
+        /> : null}
       </Container>
     </>
   )

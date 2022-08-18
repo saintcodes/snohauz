@@ -10,6 +10,8 @@ import Login from './Login'
 
 function App() {
   const [user, setUser] = useState({})
+  const [refreshReso, setRefreshReso] = useState(true)
+
 
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -45,6 +47,7 @@ function App() {
           exact path="/reservations"
           element={<Reservations 
             user={user}
+            refreshReso={refreshReso}
           />}
         />
         <Route 

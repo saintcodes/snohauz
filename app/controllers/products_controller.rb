@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     product = Product.find(params[:id])
-    render json: product, status: :ok
+    render json: product.to_json(include: [:shop]), status: :ok
   end
 
   def shop

@@ -64,7 +64,6 @@ function Navigate({user, setUser}) {
 }));
 
   function handleLogout() {
-    console.log('123')
     fetch("/logout", {
       method: "DELETE",
     }).then((r) => {
@@ -76,6 +75,7 @@ function Navigate({user, setUser}) {
   }
 
   const handleNavigate = (e) => {
+    handleDrawerClose()
     navigate(`/${e.target.innerHTML}`)
   }
 

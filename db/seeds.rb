@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts 'seeding User'
 u1 = User.create(username: "saint1", password: "Apple12!", image: "https://media.istockphoto.com/videos/portrait-of-handsome-latino-african-man-video-id1008458450?s=640x640", seller: false)
+u2 = User.create(username: "saint2", password: "Apple12!", image: "https://media.istockphoto.com/videos/portrait-of-handsome-latino-african-man-video-id1008458450?s=640x640", seller: false)
 
 puts 'seeding Shops'
 s1 = Shop.create(
@@ -146,26 +147,30 @@ r1 = Review.create(
 
 puts 'seeding Reservations'
 res1 = Reservation.create(
-  user_id: u1.id,
+  user_id: u2.id,
   product_id: p1.id,
+  shop_id: s1.id,
   date: "August 27th 2022",
   time: "07:00 AM"
 )
 res2 = Reservation.create(
   user_id: u1.id,
   product_id: p2.id,
+  shop_id: s1.id,
   date: "August 30th 2022",
   time: "07:30 AM"
 )
 res3 = Reservation.create(
   user_id: u1.id,
   product_id: p2.id,
+  shop_id: s1.id,
   date: "August 28th 2022",
   time: "09:00 AM"
 )
 res4 = Reservation.create(
   user_id: u1.id,
   product_id: p3.id,
+  shop_id: s1.id,
   date: "August 29th 2022",
   time: "08:00 AM"
 )

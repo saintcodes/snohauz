@@ -75,25 +75,25 @@ function Main({user, selectedProduct, selectedShop}) {
       </Box>
         <ImageList 
           sx={{ 
-            width: 1100, 
-            height: 1200, 
+            width: 1700, 
+            height: 800, 
             position: "relative", 
             top: 0,
             left: 0,
-            backgroundColor: 'transparent',
+            backgroundColor: 'transparent'
           }} 
-          cols={4}
-          gap={24}
+          cols={6}
+          gap={20}
         >
           {searchShops.map((shop) => (
             <ImageListItem
             key={shop.id}
             // onClick={()=>handleOpen(shop)}
-            sx={{border: 1}}  
+            sx={{border: 1, maxHeight: 400, maxWidth: 400}}  
             >
               <img
-                src={`${shop.image}?w=248&fit=crop&auto=format`}
-                srcSet={`${shop.image}?w=248&fit=crop&auto=format&dpr=2 1x`}
+                src={`${shop.image}?w=164&fit=crop&auto=format`}
+                srcSet={`${shop.image}?w=164&fit=crop&auto=format&dpr=2 1x`}
                 alt={shop.id}
                 // value={shop.user_id}
                 loading="lazy"
@@ -140,29 +140,24 @@ function Main({user, selectedProduct, selectedShop}) {
       </Box>
         <ImageList 
           sx={{ 
-            width: 2100, 
-            height: 1200, 
+            width: 1700, 
+            height: 800, 
             position: "relative", 
             top: 0,
             left: 0,
-            backgroundColor: 'transparent',
-            '&:hover': {
-              color: 'red',
-              backgroundColor: 'white'
-            }
+            backgroundColor: 'transparent'
           }} 
-          cols={5}
-          gap={24}
+          cols={6}
+          gap={20}
         >
           {searchProducts.map((product) => (
             <ImageListItem
               key={product.id}
-              sx={{border: 1}}
+              sx={{border: 1, maxHeight: 400, maxWidth: 400}}
             >
               <img
-                className="photo"
-                src={`${product.image}?w=248&fit=crop&auto=format`}
-                srcSet={`${product.image}?w=248&fit=crop&auto=format&dpr=2 1x`}
+                src={`${product.image}?w=164&fit=crop&auto=format`}
+                srcSet={`${product.image}?w=164&fit=crop&auto=format&dpr=2 1x`}
                 alt={product.id}
                 loading="lazy"
               />
