@@ -10,7 +10,6 @@ import Login from './Login'
 import Shops from './Shops'
 import Products from './Products';
 
-
 function App() {
   const [user, setUser] = useState({})
   const [shop, setShop] = useState({})
@@ -26,6 +25,8 @@ function App() {
   
   const selectedShop = (shop) => {setShop(shop)}
   const selectedProduct = (product) => {setProduct(product)}
+
+  if (!user) return <Login />
 
   return (
     <div>

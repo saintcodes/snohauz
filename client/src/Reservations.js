@@ -23,7 +23,7 @@ function Reservations() {
       if (reservation.id === selectedRes) {
         setExpanded(!expanded)
       } else {
-        console.log('hello')
+        console.log('testing')
       }
     })
   }

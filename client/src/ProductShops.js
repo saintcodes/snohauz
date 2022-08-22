@@ -6,7 +6,6 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { useNavigate } from 'react-router-dom'
 
 function ProductShops({user, product, productShops}) {
-  console.log('hello from ProductShops', productShops)
   const navigate = useNavigate()
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null)
@@ -41,7 +40,6 @@ function ProductShops({user, product, productShops}) {
     let minutes = value.getMinutes()
     let hours = ((h + 11) % 12 + 1)
     let time = `${hours}:${minutes} ${AMorPM}`
-    console.log(dateTime, value, date, hours, minutes, time)
 
     fetch('/reservations', {
       "method": "POST",
@@ -61,6 +59,7 @@ function ProductShops({user, product, productShops}) {
       .then(navigate('/reservations'))
   }
 
+  console.log(navigate)
   return (
     <Stack 
       spacing={2}

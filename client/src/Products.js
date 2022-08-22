@@ -22,15 +22,24 @@ function Products({user, product}) {
 
   const renderProductShops = (product) => {
     setShow(show => !show)
-    console.log(product.name)
     fetch(`/products/shops/${product.name}`)
       .then(res => res.json())
       .then(productShops => setProductShops(productShops))
   }
 
-  const renderReviews = (product) => {
+  const renderReviews = () => {
     setRefreshReview(refreshReview => !refreshReview)
     setShowReviews(showReviews => !showReviews)
+  }
+
+  const handleDelete = (e) => {
+    let reviewId = parseInt(e.target.id)
+    console.log('hello')
+    console.log(reviewId)
+    fetch(`/reviews/${reviewId}`, {
+      method: "DELETE"
+    })
+    setRefreshReview(!refreshReview)
   }
 
   return (
@@ -90,6 +99,7 @@ function Products({user, product}) {
         /> : null}
         {showReviews ? 
         <Reviews
+          handleDelete={handleDelete}
           refreshReview={refreshReview}
           setRefreshReview={setRefreshReview}
           renderNew={renderNew}
