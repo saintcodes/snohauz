@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_16_133421) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_22_164844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_133421) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "comment"
+    t.float "rating"
   end
 
   create_table "shop_addresses", force: :cascade do |t|
@@ -66,7 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_133421) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "image"
+    t.string "image", default: "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
     t.boolean "seller", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

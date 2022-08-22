@@ -106,6 +106,8 @@ function Main({user, selectedProduct, selectedShop}) {
                   sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                   onClick={() => renderShop(shop)}
                 >
+
+                  
                   <InfoIcon />
                 </IconButton>
               }

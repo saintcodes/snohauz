@@ -12,8 +12,8 @@ function ShopProducts({user, shopProducts, shop}) {
     "name": "",
     "description": ""
   })
-  const navigate = useNavigate()
 
+  const navigate = useNavigate()
   const style = {
     position: 'absolute',
     top: '50%',
@@ -58,9 +58,7 @@ function ShopProducts({user, shopProducts, shop}) {
     setSelectedProduct(product)
   }
 
-  const handleClose = () => {
-    setOpen(false)
-  }
+  const handleClose = () => {setOpen(false)}
 
   return (
     <Stack 
@@ -90,11 +88,12 @@ function ShopProducts({user, shopProducts, shop}) {
             src={product.image} 
             alt={product.name}
           />
-          <div style={{position: "relative", left: 450, top: -350, maxWidth: "60%"}}>
+          <div style={{position: "relative", left: 450, top: -340, maxWidth: "60%"}}>
             <h3>{product.name}</h3>
             <br/>
             <span>{product.description}</span>
-            <br/><br/>
+            <br/>
+            <br/>
             <Button 
               onClick={() => handleOpen(product)} 
               color="secondary" 

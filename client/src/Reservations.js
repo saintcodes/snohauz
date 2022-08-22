@@ -3,19 +3,30 @@ import { styled } from '@mui/material/styles';
 import { Button, Stack, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Typography } from '@mui/material'
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import DeleteIcon from '@mui/icons-material/Delete'
 
 function Reservations() {
   const [reservations, setReservations] = useState([])
   const [refreshReso, setRefreshReso] = useState(true)
   const [expanded, setExpanded] = useState(false)
+  const [selectedRes, setSelectedRes] = useState()
   
   useEffect(() => {
     fetch('/reservations')
-    .then(res => res.json())
+    .then(response => response.json())
     .then(reservations => setReservations(reservations))
   }, [refreshReso])
   
-  const handleExpandClick =() => setExpanded(!expanded)
+  const handleExpandClick = (e, reservation) => {
+    setSelectedRes(parseInt(e.target.id))
+    reservations.map((reservation) => {
+      if (reservation.id === selectedRes) {
+        setExpanded(!expanded)
+      } else {
+        console.log('hello')
+      }
+    })
+  }
 
   const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -75,12 +86,13 @@ function Reservations() {
         </CardContent>
         <CardActions disableSpacing>
           <ExpandMore
+            id={reservation.id}
             expand={expanded}
-            onClick={() => handleExpandClick(index)}
+            onClick={(e) => handleExpandClick(e, reservation)}
             aria-expanded={expanded}
             aria-label="show more"
           >
-            <ExpandMoreIcon />
+            <ExpandMoreIcon id={reservation.id}/>
           </ExpandMore>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -98,9 +110,14 @@ function Reservations() {
               {reservation.product.name}
             </Typography>
             <br/>
-            {/* <Button onClick={() => handleModify(reservation)} variant="contained" color="success">Modify this Reservation</Button>
-            &nbsp;&nbsp;&nbsp; */}
-            <Button onClick={() => handleCancel(reservation)} variant="contained" color="error">Cancel this Reservation</Button>
+            <Button 
+              onClick={() => handleCancel(reservation)} 
+              startIcon={<DeleteIcon />} 
+              variant="contained" 
+              color="error"
+            >
+                Cancel this Reservation
+            </Button>
           </CardContent>
         </Collapse>
       </Card>

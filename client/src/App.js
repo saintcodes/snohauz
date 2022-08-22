@@ -9,7 +9,7 @@ import Main from './Main'
 import Login from './Login'
 import Shops from './Shops'
 import Products from './Products';
-import ShopProducts from './ShopProducts'
+
 
 function App() {
   const [user, setUser] = useState({})
@@ -24,9 +24,8 @@ function App() {
     });
   }, []);
   
-  function selectedShop(shop) {setShop(shop)}
-
-  function selectedProduct(product) {setProduct(product)}
+  const selectedShop = (shop) => {setShop(shop)}
+  const selectedProduct = (product) => {setProduct(product)}
 
   return (
     <div>
@@ -70,13 +69,6 @@ function App() {
             shop={shop}
           />}
         />
-        {/* <Route 
-          exact path="/shops/:id/products"
-          element={<ShopProducts 
-            user={user}
-            shop={shop}
-          />}
-        /> */}
         <Route 
           exact path="/main"
           element={<Main 

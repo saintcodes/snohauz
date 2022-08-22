@@ -15,7 +15,7 @@ s1 = Shop.create(
   hours: "06:00 AM to 06:00 PM",
   description: "NYC's Go-To Ski/Snowboard Rental Shop",
   phone: "(646) 476-5056",
-  image: "https://www.famousinternetskiers.com/wp-content/uploads/2013/09/gg-0361.jpg"
+  image: "https://i0.wp.com/www.fearlesscaptivations.com/wp-content/uploads/2022/03/Alta-Ski-Area-Utah-Ski-Lift-Views.jpg?ssl=1"
 )
 s2 = Shop.create(
   name: "Burton New York City Flagship Store",
@@ -131,18 +131,53 @@ p2 = Product.create(
 )
 p3 = Product.create(
   category: "Snowboards",
-  name: "Yes. Hel Yes. Snowboard - Women's 2023",
+  name: "Yes Hel Yes Snowboard - Women's 2023",
   price: 550,
   description: "When second place ain't good enough, reach for the Yes. Hel Yes. Snowboard. This powerful freerider is custom made for slashing fresh, straight lining chop, and exploring the unseen, with a Directional CamRock profile and UnderBite edge contouring for grip and control in any terrain. A poplar and paulownia wood core provides stability and power without weighing you down, while bamboo inserts deliver the response required to navigate through the gnarliest of lines. Hell, YES!",
   image: "https://images.evo.com/imgp/700/221802/914564/yes-hel-yes-snowboard-women-s-2023-.jpg",
   shop_id: s1.id
+)
+p4 = Product.create(
+  category: "Snowboards",
+  name: "Yes Hel Yes Snowboard - Women's 2023",
+  price: 550,
+  description: "When second place ain't good enough, reach for the Yes. Hel Yes. Snowboard. This powerful freerider is custom made for slashing fresh, straight lining chop, and exploring the unseen, with a Directional CamRock profile and UnderBite edge contouring for grip and control in any terrain. A poplar and paulownia wood core provides stability and power without weighing you down, while bamboo inserts deliver the response required to navigate through the gnarliest of lines. Hell, YES!",
+  image: "https://images.evo.com/imgp/700/221802/914564/yes-hel-yes-snowboard-women-s-2023-.jpg",
+  shop_id: s2.id
+)
+p5 = Product.create(
+  category: "Snowboards",
+  name: "Yes Hel Yes Snowboard - Women's 2023",
+  price: 550,
+  description: "When second place ain't good enough, reach for the Yes. Hel Yes. Snowboard. This powerful freerider is custom made for slashing fresh, straight lining chop, and exploring the unseen, with a Directional CamRock profile and UnderBite edge contouring for grip and control in any terrain. A poplar and paulownia wood core provides stability and power without weighing you down, while bamboo inserts deliver the response required to navigate through the gnarliest of lines. Hell, YES!",
+  image: "https://images.evo.com/imgp/700/221802/914564/yes-hel-yes-snowboard-women-s-2023-.jpg",
+  shop_id: s3.id
 )
 
 puts 'seeding Reviews'
 r1 = Review.create(
   user_id: u1.id,
   product_id: p1.id,
-  comment: "This is the best board I have EVER boarded with. Feels like you're riding on pow even when it's gnar af!"
+  comment: "This is the best board I have EVER shredded with. Feels like you're riding on pow even when it's gnar af!",
+  rating: 4.5
+)
+r2 = Review.create(
+  user_id: u1.id,
+  product_id: p3.id,
+  comment: "THREE WORDS - POW. POW. POW!",
+  rating: 5.0
+)
+r3 = Review.create(
+  user_id: u2.id,
+  product_id: p3.id,
+  comment: "I CAN'T EVEN!",
+  rating: 4.5
+)
+r4 = Review.create(
+  user_id: u1.id,
+  product_id: p3.id,
+  comment: "Just purchased this! Can't wait to use it this season!",
+  rating: 2.5
 )
 
 puts 'seeding Reservations'

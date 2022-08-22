@@ -24,7 +24,7 @@ function Shops({user, shop}) {
           marginRight: 15
         }}>
           <br/><br/>
-          <h1>{shop.name}</h1>
+            <h1>{shop.name}</h1>
           <img 
             style={{
               position: "relative",
