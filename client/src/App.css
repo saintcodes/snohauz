@@ -53,5 +53,32 @@ h3.logo-header {
   font-family: 'Square Peg', cursive;
   font-size: xx-large;
   /* margin-left: 1%; */
+}
 
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.formTitleLink3 {
+  border-radius: 25px;
+  /* background-color: rgb(115, 12, 89); */
+  font-weight: 1000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  background-color: white;
+  opacity: 0.9;
+  margin-left: 35%;
+  margin-top: 16%;
+  display: inline-block;
+  padding-bottom: 0%;
+  width: 30%;
+  text-align: center;
+  height: 375px;
+  position: absolute;
 }

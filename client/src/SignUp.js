@@ -47,11 +47,13 @@ function SignUp({user, setUser, onLogin}) {
   }
 
   return (
-    <div 
-        className="formTitleLink4" 
-        style={{backgroundColor: 'smoke', opacity: 0.9}}
-      >
-      <h1>snohous</h1>
+    <div className="formTitleLink3">
+      <div>
+           <video id="background-video"  autoPlay loop muted>
+          <source src='https://cdn.videvo.net/videvo_files/video/free/2014-01/large_watermarked/Snowboarding_offpiste_preview.mp4' type="video/mp4"/>
+          </video>
+         </div>
+      <h1 id="brand-logo-login">snohaus</h1>
         <Box
           component="form"
           sx={{'& .MuiTextField-root': { m: 1, width: '25ch' },}}
@@ -76,6 +78,7 @@ function SignUp({user, setUser, onLogin}) {
             value={signUpForm.password} 
             onChange={handleChange} 
             required
+            helperText="Passwords must contain at least one upper case letter, one number, one special character, and be a minimum of 8 characters long"
           />
             <br></br>
           <div style={{color: "red"}}>
@@ -87,7 +90,7 @@ function SignUp({user, setUser, onLogin}) {
           <Button type="submit" variant="contained">Sign Up</Button> <br></br>
         <div>
             <br></br>
-          Already have a snohous account?&nbsp;
+          Already have a snohaus account?&nbsp;
           <a href="/">
             Log in here!
           </a>

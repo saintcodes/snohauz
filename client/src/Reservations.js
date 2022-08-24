@@ -10,7 +10,7 @@ function Reservations() {
   const [refreshReso, setRefreshReso] = useState(true)
   const [expanded, setExpanded] = useState(false)
   const [selectedRes, setSelectedRes] = useState()
-  
+
   useEffect(() => {
     fetch('/reservations')
     .then(response => response.json())
@@ -67,7 +67,7 @@ function Reservations() {
       // direction="row"
       cols={2}
     >
-    {reservations.map((reservation, index) =>
+    {reservations.length>0 ? reservations.map((reservation, index) =>
       <Card key={index} sx={{ maxWidth: 600 }}>
         <CardHeader
           title={reservation.shop.name}
@@ -121,7 +121,7 @@ function Reservations() {
           </CardContent>
         </Collapse>
       </Card>
-    )}
+    ): <h2 style={{color: 'gray'}}>You do not have any reservations yet</h2>}
     </Stack>
     </>
   )

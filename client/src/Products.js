@@ -68,6 +68,7 @@ function Products({user, product}) {
             <h4><em>{product.description}</em></h4>
             <p>
               <h3>Price: ${product.price}</h3>
+              <h3>Rental Rate: ${product.rental_rate}/day</h3>
               <br/>
               <br/>
             </p>

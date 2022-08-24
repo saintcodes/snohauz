@@ -9,6 +9,7 @@ import Main from './Main'
 import Login from './Login'
 import Shops from './Shops'
 import Products from './Products';
+// import Map from './Map';
 
 function App() {
   const [user, setUser] = useState({})
@@ -78,8 +79,14 @@ function App() {
             selectedProduct={selectedProduct}
           />}
         />
+        {/* <Route 
+          exact path="/map"
+          element={<Map 
+            user={user}
+          />}
+        /> */}
         <Route exact path="/"
-          element={<Login  
+          element={<Login
             setUser={setUser}
           />}
         />

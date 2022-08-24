@@ -46,9 +46,9 @@ function Shops({user, shop}) {
             <br/><br/>
             Address:
             <br/>
-            {/* {shop.shop_address.street}
+            {shop.shop_address.street}
             <br/>
-          {shop.shop_address.city}, {shop.shop_address.state}&nbsp;{shop.shop_address.zip_code} */}
+            {shop.shop_address.city}, {shop.shop_address.state}&nbsp;{shop.shop_address.zip_code}
             <br/><br/>
             <Button 
               id={shop.id} 

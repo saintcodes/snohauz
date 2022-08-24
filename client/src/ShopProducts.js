@@ -72,7 +72,7 @@ function ShopProducts({user, shopProducts, shop}) {
         marginRight: 15
       }}
     >
-      {shopProducts.map(product => 
+      {shopProducts.length>0 ? shopProducts.map(product => 
         <Grid
           key={product.id}
           sx={{
@@ -90,10 +90,9 @@ function ShopProducts({user, shopProducts, shop}) {
           />
           <div style={{position: "relative", left: 450, top: -340, maxWidth: "60%"}}>
             <h3>{product.name}</h3>
-            <br/>
             <span>{product.description}</span>
             <br/>
-            <br/>
+            <h4>Rental Rate: ${product.rental_rate}/day</h4>
             <Button 
               onClick={() => handleOpen(product)} 
               color="secondary" 
@@ -102,8 +101,7 @@ function ShopProducts({user, shopProducts, shop}) {
               Reserve Now!
             </Button>
           </div>
-        </Grid>
-      )}
+        </Grid>) : <h2 style={{color: 'gray'}}>No product listings yet for this retailer</h2>}
        {open ? <Modal
         open={open}
         onClose={handleClose}

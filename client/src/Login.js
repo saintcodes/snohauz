@@ -1,6 +1,6 @@
- import React, { useState } from "react";
- import { useNavigate } from 'react-router-dom'
- import { Button, TextField } from '@mui/material'
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
+import { Button, TextField } from '@mui/material'
 import { Box } from '@mui/system'
 
 function Login({ setUser }) {
@@ -41,63 +41,55 @@ function Login({ setUser }) {
   }
 
   return (
-    <div>
-      {/* <div>
-        <video id="background-video" autoPlay loop muted>
-          <source
-            src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_027_preview.mp4"
-            type="video/mp4"
-          />
+    <div className="formTitleLink3">
+      <div>
+          <video id="background-video"  autoPlay loop muted>
+        <source src='https://cdn.videvo.net/videvo_files/video/free/2014-01/large_watermarked/Snowboarding_offpiste_preview.mp4' type="video/mp4"/>
         </video>
-      </div> */}
-
-      <div className="formTitleLink3">
-        <h1 id="brand-logo-login">snohous</h1>
-        <Box
-          component="form"
-          sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
-          noValidate
-          autoComplete="off"
-          onSubmit={handleSubmit}
-        >
-          <TextField
-            name="username"
-            label="Username"
-            variant="filled"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-          <br />
-          <TextField
-            name="password"
-            label="Password"
-            type="password"
-            variant="filled"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+        </div>
+      <h1 id="brand-logo-login">snohaus</h1>
+      <Box
+        component="form"
+        sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+        noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        <TextField
+          name="username"
+          label="Username"
+          variant="filled"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <TextField
+          name="password"
+          label="Password"
+          type="password"
+          variant="filled"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <br></br>
+        <div style={{ color: "red" }}>
+          {errors.map((err) => (
+            <div key={err}>{err}</div>
+          ))}
+        </div>
+        <br></br>
+        <Button type="submit" variant="contained">
+          Sign In
+        </Button>{" "}
+        <br></br>
+        <div>
           <br></br>
-          <div style={{ color: "red" }}>
-            {errors.map((err) => (
-              <div key={err}>{err}</div>
-            ))}
-          </div>
-          <br></br>
-          <Button type="submit" variant="contained">
-            Sign In
-          </Button>{" "}
-          <br></br>
-          <div>
-            <br></br>
-            Don't have an account?&nbsp;
-            <a href="/sign-up">Sign up now!</a>
-            <br></br>
-            <br></br>
-          </div>
-        </Box>
-      </div>
+          Don't have an account?&nbsp;
+          <a href="/sign-up">Sign up now!</a>
+        </div>
+      </Box>
     </div>
   );
 }

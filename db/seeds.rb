@@ -117,6 +117,7 @@ p1 = Product.create(
   category: "Snowboards",
   name: "GNU Barrett Splitboard - Women's 2023",
   price: 999,
+  rental_rate: 94,
   description: "Once you're no longer constrained by boundaries and chairlifts, a whole new world of possibility opens up to you. And if you've spent your resort riding days looking for untracked powder and steep faces, the backcountry is so sweet you might never go back. The GNU Barrett Splitboard was hand built in the rugged Olympic mountains with just the goal of helping you explore this snowy new world of ultimate freedom. Designed to be featherweight on the way up while offering premium freeride performance on the way down, the Barret Split offers the best of both worlds. It's floaty in power, precise on edge, and easy to navigate through any situation you might encounter.",
   image: "https://images.evo.com/imgp/700/220843/899329/gnu-barrett-splitboard-women-s-2023-.jpg",
   shop_id: s1.id
@@ -125,6 +126,7 @@ p2 = Product.create(
   category: "Snowboards",
   name: "Burton Feelgood Flying V Snowboard - Women's 2023",
   price: 610,
+  rental_rate: 89,
   description: "The name is a good start, and it only gets better from there. The Burton Feelgood Flying V Snowboard is a modern day icon for all mountain riders. Built with Burton's softer, more playful Flying V rocker profile and an energetic Super Fly II™ 700G Core, this board combines all terrain muscle with an effortless, intuitive feel that almost disappears under your feet. Smooth, capable, and fun to ride in all conditions, the Burton Feelgood Flying V Snowboard is worthy of a spot in any quiver.",
   image: "https://images.evo.com/imgp/700/220300/910394/burton-feelgood-flying-v-snowboard-women-s-2023-.jpg",
   shop_id: s1.id
@@ -133,6 +135,7 @@ p3 = Product.create(
   category: "Snowboards",
   name: "Yes Hel Yes Snowboard - Women's 2023",
   price: 550,
+  rental_rate: 85,
   description: "When second place ain't good enough, reach for the Yes. Hel Yes. Snowboard. This powerful freerider is custom made for slashing fresh, straight lining chop, and exploring the unseen, with a Directional CamRock profile and UnderBite edge contouring for grip and control in any terrain. A poplar and paulownia wood core provides stability and power without weighing you down, while bamboo inserts deliver the response required to navigate through the gnarliest of lines. Hell, YES!",
   image: "https://images.evo.com/imgp/700/221802/914564/yes-hel-yes-snowboard-women-s-2023-.jpg",
   shop_id: s1.id
@@ -141,6 +144,7 @@ p4 = Product.create(
   category: "Snowboards",
   name: "Yes Hel Yes Snowboard - Women's 2023",
   price: 550,
+  rental_rate: 83,
   description: "When second place ain't good enough, reach for the Yes. Hel Yes. Snowboard. This powerful freerider is custom made for slashing fresh, straight lining chop, and exploring the unseen, with a Directional CamRock profile and UnderBite edge contouring for grip and control in any terrain. A poplar and paulownia wood core provides stability and power without weighing you down, while bamboo inserts deliver the response required to navigate through the gnarliest of lines. Hell, YES!",
   image: "https://images.evo.com/imgp/700/221802/914564/yes-hel-yes-snowboard-women-s-2023-.jpg",
   shop_id: s2.id
@@ -149,6 +153,7 @@ p5 = Product.create(
   category: "Snowboards",
   name: "Yes Hel Yes Snowboard - Women's 2023",
   price: 550,
+  rental_rate: 83,
   description: "When second place ain't good enough, reach for the Yes. Hel Yes. Snowboard. This powerful freerider is custom made for slashing fresh, straight lining chop, and exploring the unseen, with a Directional CamRock profile and UnderBite edge contouring for grip and control in any terrain. A poplar and paulownia wood core provides stability and power without weighing you down, while bamboo inserts deliver the response required to navigate through the gnarliest of lines. Hell, YES!",
   image: "https://images.evo.com/imgp/700/221802/914564/yes-hel-yes-snowboard-women-s-2023-.jpg",
   shop_id: s3.id

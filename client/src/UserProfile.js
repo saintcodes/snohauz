@@ -70,9 +70,9 @@ function UserProfile({setUser, user}) {
       </h1>
      <hr/>
       <br/>
-     <div><img style={{maxWidth: 250}} alt="user" src={"https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"}/></div>
+     <div><img style={{maxWidth: 250}} alt="user" src={user.image}/></div>
       <br/>
-      <Button onClick={handleOpen} variant="contained" color="warning">Upload Photo</Button>
+      <Button onClick={handleOpen} variant="contained" color="warning">Edit Photo</Button>
       {open ? <Modal
         open={open}
         onClose={handleClose}

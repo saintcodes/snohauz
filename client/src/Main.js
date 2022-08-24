@@ -3,7 +3,6 @@ import { TextField, Box, IconButton, Stack, ImageList, ImageListItemBar, ImageLi
 import InfoIcon from '@mui/icons-material/Info';
 import { useNavigate } from 'react-router-dom'
 
-
 function Main({user, selectedProduct, selectedShop}) {
   const [shops, setShops] = useState([])
   const [products, setProducts] = useState([])
@@ -42,145 +41,165 @@ function Main({user, selectedProduct, selectedShop}) {
       .then(navigate(`/shops/${shop.name}`))
     }
 
+    const myStyle={
+      backgroundImage: "url('https://images.pexels.com/photos/880497/pexels-photo-880497.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&dpr=1')",
+      height:'250vh',
+      width: '100vw',
+      // marginTop:'40px',
+      // zIndex: '-1',
+      // fontSize:'50px',
+      // objectFit: 'cover',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      backgroundRepeat: 'no-repeat',
+  };
+  
   return (
-    <>
-    <Stack sx={{
-      position: "absolute",
-      marginLeft: 10,
-      marginTop: 10,
-      marginRight: 15 
-    }}>
-        <span style={{fontSize: "x-large"}}>
-          <strong><em>All Shops</em></strong>
-        </span>
-      <hr/>
-      <Box
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <div> 
-          <TextField 
-            fullWidth
-            id="Outlined warning fullwidth" 
-            color="warning" 
-            label="Search by Shop Name" 
-            focused
-            type="search"
-            onChange={handleShopSearch}
-          />
-        </div>
-      </Box>
-        <ImageList 
-          sx={{ 
-            width: 1700, 
-            height: 800, 
-            position: "relative", 
-            top: 0,
-            left: 0,
-            backgroundColor: 'transparent'
-          }} 
-          cols={6}
-          gap={20}
+    <div style={myStyle}>
+      <Stack sx={{
+        position: "absolute",
+        marginLeft: 10,
+        marginTop: 10,
+        marginRight: 15,
+        backgroundColor: 'transparent',
+        // overflowX: 'hidden',
+        // overflowY: 'auto',
+        paddingBottom: "0%",
+        height: "200%",
+        width: "100%"
+      }}>
+          <span style={{fontSize: "x-large", color: 'white'}}>
+            <strong><em>All Shops</em></strong>
+          </span>
+        <hr/>
+        <Box
+          sx={{
+            '& .MuiTextField-root': { m: 1, width: '25ch' },
+          }}
+          noValidate
+          autoComplete="off"
         >
-          {searchShops.map((shop) => (
-            <ImageListItem
-            key={shop.id}
-            // onClick={()=>handleOpen(shop)}
-            sx={{border: 1, maxHeight: 400, maxWidth: 400}}  
-            >
-              <img
-                src={`${shop.image}?w=164&fit=crop&auto=format`}
-                srcSet={`${shop.image}?w=164&fit=crop&auto=format&dpr=2 1x`}
-                alt={shop.id}
-                // value={shop.user_id}
-                loading="lazy"
-              />
-            <ImageListItemBar
-              title={shop.name}
-              subtitle={shop.description}
-              actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  onClick={() => renderShop(shop)}
-                >
+          <div> 
+            <TextField 
+              fullWidth
+              id="Outlined warning fullwidth" 
+              color='primary' 
+              label="Search by Shop Name" 
+              focused
+              type="search"
+              onChange={handleShopSearch}
+            />
+          </div>
+        </Box>
+          <ImageList 
+            sx={{ 
+              width: 1700, 
+              height: 800, 
+              position: "relative", 
+              top: 0,
+              left: 0,
+              backgroundColor: 'transparent'
+            }} 
+            cols={6}
+            gap={20}
+          >
+            {searchShops.map((shop) => (
+              <ImageListItem
+              key={shop.id}
+              // onClick={()=>handleOpen(shop)}
+              sx={{border: 1, maxHeight: 400, maxWidth: 400}}  
+              >
+                <img
+                  src={`${shop.image}?w=164&fit=crop&auto=format`}
+                  srcSet={`${shop.image}?w=164&fit=crop&auto=format&dpr=2 1x`}
+                  alt={shop.id}
+                  // value={shop.user_id}
+                  loading="lazy"
+                />
+              <ImageListItemBar
+                title={shop.name}
+                subtitle={shop.description}
+                actionIcon={
+                  <IconButton
+                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                    onClick={() => renderShop(shop)}
+                  >
 
-                  
-                  <InfoIcon />
-                </IconButton>
-              }
-              sx={{height: 125}}
-            />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      <br/><br/><br/>
-        <span style={{fontSize: "x-large"}}>
-          <strong><em>All Products</em></strong>
-        </span>      
-      <hr/>
-      <Box
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <div> 
-          <TextField 
-            fullWidth
-            id="Outlined warning fullwidth" 
-            color="warning" 
-            label="Search by Product Name" 
-            focused
-            type="search" 
-            onChange={handleProductSearch}
-          />
-        </div>
-      </Box>
-        <ImageList 
-          sx={{ 
-            width: 1700, 
-            height: 800, 
-            position: "relative", 
-            top: 0,
-            left: 0,
-            backgroundColor: 'transparent'
-          }} 
-          cols={6}
-          gap={20}
-        >
-          {searchProducts.map((product) => (
-            <ImageListItem
-              key={product.id}
-              sx={{border: 1, maxHeight: 400, maxWidth: 400}}
-            >
-              <img
-                src={`${product.image}?w=164&fit=crop&auto=format`}
-                srcSet={`${product.image}?w=164&fit=crop&auto=format&dpr=2 1x`}
-                alt={product.id}
-                loading="lazy"
+                    
+                    <InfoIcon />
+                  </IconButton>
+                }
+                sx={{height: 125}}
               />
-            <ImageListItemBar
-              title={product.name}
-              subtitle={product.description}
-              actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  onClick={() => renderProduct(product)}
-                >
-                  <InfoIcon />
-                </IconButton>
-              }
-              sx={{height: 125}}
+              </ImageListItem>
+            ))}
+          </ImageList>
+          <br/>
+          <span style={{fontSize: "x-large", color: 'white'}}>
+            <strong><em>All Products</em></strong>
+          </span>      
+        <hr/>
+        <Box
+          sx={{
+            '& .MuiTextField-root': { m: 1, width: '25ch' },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <div> 
+            <TextField 
+              fullWidth
+              size="large"
+              id="Outlined warning fullwidth" 
+              color="primary" 
+              label="Search by Product Name" 
+              focused
+              type="search" 
+              onChange={handleProductSearch}
             />
-            </ImageListItem>
-          ))}
-        </ImageList> 
-    </Stack>
-  </>
+          </div>
+        </Box>
+          <ImageList 
+            sx={{ 
+              width: 1700, 
+              height: 800, 
+              position: "relative", 
+              top: 0,
+              left: 0,
+              backgroundColor: 'transparent'
+            }} 
+            cols={6}
+            gap={20}
+          >
+            {searchProducts.map((product) => (
+              <ImageListItem
+                key={product.id}
+                sx={{border: 1, maxHeight: 400, maxWidth: 400}}
+              >
+                <img
+                  src={`${product.image}?w=164&fit=crop&auto=format`}
+                  srcSet={`${product.image}?w=164&fit=crop&auto=format&dpr=2 1x`}
+                  alt={product.id}
+                  loading="lazy"
+                />
+              <ImageListItemBar
+                title={product.name}
+                subtitle={product.description}
+                actionIcon={
+                  <IconButton
+                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                    onClick={() => renderProduct(product)}
+                  >
+                    <InfoIcon />
+                  </IconButton>
+                }
+                sx={{height: 125}}
+              />
+              </ImageListItem>
+            ))}
+          </ImageList> 
+      </Stack>
+    </div>
   )
 }
 
