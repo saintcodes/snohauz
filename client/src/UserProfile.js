@@ -68,6 +68,8 @@ function UserProfile({setUser, user}) {
       </h1>
      <hr/>
       <br/>
+      <p>{user.bio}</p>
+      <br/>
      <div><img style={{maxWidth: 250}} alt="user" src={user.image}/></div>
       <br/>
       <Button onClick={handleOpen} variant="contained" color="warning">Edit Photo</Button>

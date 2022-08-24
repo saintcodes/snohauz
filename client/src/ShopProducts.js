@@ -102,7 +102,7 @@ function ShopProducts({user, shopProducts, shop}) {
               Reserve Now!
             </Button>
           </div>
-        </Grid>) : <h2 style={{color: 'gray'}}>No product listings yet for this retailer</h2>}
+        </Grid>) : <h2 style={{color: 'red'}}>No product listings yet for this retailer</h2>}
        {open ? <Modal
         open={open}
         onClose={handleClose}

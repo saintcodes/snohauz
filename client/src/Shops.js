@@ -18,7 +18,7 @@ function Shops({user, shop}) {
   return ( 
     <div style={{
       backgroundImage: "url('https://images.pexels.com/photos/290452/pexels-photo-290452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-      height: '250vh',
+      height: '360vh',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed'
@@ -26,9 +26,9 @@ function Shops({user, shop}) {
       <Container>
         <div style={{
           position: "absolute",
-          marginLeft: 30,
+          marginLeft: 0,
           marginTop: 30,
-          marginRight: 15
+          marginRight: 0
         }}>
           <br/><br/>
             <h1>{shop.name}</h1>
@@ -43,7 +43,7 @@ function Shops({user, shop}) {
             src={shop.image}
             loading="lazy"
           />
-          <div style={{position: 'relative', marginLeft: 580, marginTop: -330}}>
+          <div style={{position: 'relative', marginLeft: 480, marginTop: -330}}>
             <h3>{shop.description}</h3>
             <span>Hours: 
             <br/>{shop.hours}</span>
@@ -53,9 +53,9 @@ function Shops({user, shop}) {
             <br/><br/>
             Address:
             <br/>
-            {shop.shop_address.street}
+            {/* {shop.shop_address.street}
             <br/>
-            {shop.shop_address.city}, {shop.shop_address.state}&nbsp;{shop.shop_address.zip_code}
+            {shop.shop_address.city}, {shop.shop_address.state}&nbsp;{shop.shop_address.zip_code} */}
             <br/><br/>
             <Button 
               id={shop.id} 

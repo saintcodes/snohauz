@@ -17,6 +17,8 @@ function Reservations() {
     .then(reservations => setReservations(reservations))
   }, [refreshReso])
   
+  window.scrollTo(0,0)
+
   const handleExpandClick = (e, reservation) => {
     setSelectedRes(parseInt(e.target.id))
     reservations.map((reservation) => {

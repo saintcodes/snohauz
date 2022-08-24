@@ -44,7 +44,7 @@ function Main({user, selectedProduct, selectedShop}) {
 
     const myStyle={
       backgroundImage: "url('https://images.pexels.com/photos/880497/pexels-photo-880497.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&dpr=1')",
-      height:'250vh',
+      height:'220vh',
       width: '100vw',
       // marginTop:'40px',
       // zIndex: '-1',
@@ -99,7 +99,8 @@ function Main({user, selectedProduct, selectedShop}) {
               position: "relative", 
               top: 0,
               left: 0,
-              backgroundColor: 'transparent'
+              backgroundColor: 'transparent',
+              opacity: '0.95'
             }} 
             cols={6}
             gap={20}
@@ -114,7 +115,6 @@ function Main({user, selectedProduct, selectedShop}) {
                   src={`${shop.image}?w=164&fit=crop&auto=format`}
                   srcSet={`${shop.image}?w=164&fit=crop&auto=format&dpr=2 1x`}
                   alt={shop.id}
-                  // value={shop.user_id}
                   loading="lazy"
                 />
               <ImageListItemBar
@@ -125,12 +125,10 @@ function Main({user, selectedProduct, selectedShop}) {
                     sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                     onClick={() => renderShop(shop)}
                   >
-
-                    
                     <InfoIcon />
                   </IconButton>
                 }
-                sx={{height: 125}}
+                sx={{height: 75}}
               />
               </ImageListItem>
             ))}
@@ -168,9 +166,9 @@ function Main({user, selectedProduct, selectedShop}) {
               top: 0,
               left: 0,
               backgroundColor: 'transparent',
-              opacity: "0.9"
+              opacity: "0.95"
             }} 
-            cols={6}
+            cols={5}
             gap={20}
           >
             {searchProducts.map((product) => (
@@ -195,7 +193,7 @@ function Main({user, selectedProduct, selectedShop}) {
                     <InfoIcon />
                   </IconButton>
                 }
-                sx={{height: 125}}
+                sx={{height: 80}}
               />
               </ImageListItem>
             ))}
