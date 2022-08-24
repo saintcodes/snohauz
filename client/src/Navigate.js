@@ -116,7 +116,9 @@ function Navigate({user, setUser}) {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
-        <div><img style={{maxWidth: 250}} alt="user" src={user.image}/></div>
+        <div>
+          <h3 style={{align: "center", justifyContent: "center", alignItems: "center", alignContent: "center"}}>{user.username}</h3>
+          <img style={{maxWidth: 250}} alt="user" src={user.image}/></div>
         <Divider />
         <List>
           {['Main', 'Reservations', 'Profile'].map((text, index) => (

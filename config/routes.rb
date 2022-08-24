@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :reviews, except: [:update]
   resources :products, only: [:index, :show]
   resources :shops, only: [:index, :show]
-  resources :users, only: [:show, :create, :update]
+  resources :users, only: [:index, :show, :create, :update]
   
   post '/signup', to: "users#create"
   get "/me", to: "users#show"

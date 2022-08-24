@@ -13,7 +13,6 @@ function SignUp({user, setUser, onLogin}) {
   })
 
   const handleChange = (e) => {
-    console.log('hello')
     let target = e.target
     let value = target.type === 'checkbox' ? target.checked : target.value
     let name = target.name
@@ -25,7 +24,6 @@ function SignUp({user, setUser, onLogin}) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(signUpForm)
     fetch("/signup", {
       method: "POST",
       headers: {

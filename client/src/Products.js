@@ -46,7 +46,7 @@ function Products({user, product}) {
 
   return (
     <div style={{
-      backgroundImage: "url('https://images.pexels.com/photos/290452/pexels-photo-290452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+      backgroundImage: "url('https://images.pexels.com/photos/376697/pexels-photo-376697.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
       height: '250vh',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -57,7 +57,10 @@ function Products({user, product}) {
           position: "absolute",
           marginLeft: 30,
           marginTop: 30,
-          marginRight: 15
+          marginRight: 15,
+          // backgroundColor: 'gray',
+          // opacity: "0.7",
+          color: "white"
         }}>
         <br/><br/>
           <h1>{product.name}</h1>

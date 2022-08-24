@@ -96,9 +96,16 @@ function Reviews({user, refreshReview, handleDelete, setRefreshReview, renderNew
         <br/>
         {open ? null :
           <FormControl
+            sx={{
+              border: 1,
+              borderColor: 'primary.main',
+              backgroundColor: 'white',
+              opacity: "0.9",
+              borderRadius: '16px',
+              width: "200%",
+              padding: "7%"
+            }}
             open={open}
-            // onClose={handleClose}
-
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             >

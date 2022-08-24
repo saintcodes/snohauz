@@ -30,6 +30,7 @@ function Login({ setUser }) {
       if (r.ok) {
         r.json().then((user) => setUser(user));
         navigate("/main")
+        console.log('whatsup')
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

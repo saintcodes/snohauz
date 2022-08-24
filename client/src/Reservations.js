@@ -48,7 +48,13 @@ function Reservations() {
   }
 
   return (
-    <>
+    <div style={{
+      backgroundImage: "url('https://images.pexels.com/photos/290452/pexels-photo-290452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+      height: '250vh',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+    }}>
     <h2 style={{
       position: "absolute",
       marginLeft: 320,
@@ -68,7 +74,7 @@ function Reservations() {
       cols={2}
     >
     {reservations.length>0 ? reservations.map((reservation, index) =>
-      <Card key={index} sx={{ maxWidth: 600 }}>
+      <Card key={index} sx={{ opacity: "0.9", maxWidth: 600 }}>
         <CardHeader
           title={reservation.shop.name}
           subheader={`${reservation.date} - ${reservation.time}`}
@@ -123,7 +129,7 @@ function Reservations() {
       </Card>
     ): <h2 style={{color: 'gray'}}>You do not have any reservations yet</h2>}
     </Stack>
-    </>
+    </div>
   )
 }
 

@@ -20,10 +20,7 @@ function UserProfile({setUser, user}) {
     p: 4,
   };
 
-  const handleOpen = (user) => {
-    setOpen(true)
-    // setSelectedProduct(product)
-  }
+  const handleOpen = (user) => {setOpen(true)}
   
   const handleClose = () => {setOpen(false)}
 
@@ -34,7 +31,7 @@ function UserProfile({setUser, user}) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({formData, "id": user.id}),
+      body: JSON.stringify({...formData, user_id: user.id}),
     }).then((r) => {
       if (r.ok) {
         r.json().then(user => setUser(user))
@@ -45,6 +42,7 @@ function UserProfile({setUser, user}) {
         image: ""
       })
     })
+    setOpen(false)
     console.log('hello')
   }
 

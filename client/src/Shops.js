@@ -13,6 +13,8 @@ function Shops({user, shop}) {
       .then(shopProducts => setShopProducts(shopProducts.products))
   }
 
+  window.scrollTo(0,0)
+
   return ( 
     <div style={{
       backgroundImage: "url('https://images.pexels.com/photos/290452/pexels-photo-290452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
