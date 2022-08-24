@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+      <!-- <title>Locator</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="locatorplus.css" rel="stylesheet">
+      <script src="locatorplus.js"></script>
+      <script>
+        const CONFIGURATION = {
+          "locations": [
+            {"title":"Mount Everest - Westwood Store","address1":"318 3rd Ave","address2":"Westwood, NJ 07675, USA","coords":{"lat":40.99138777346037,"lng":-74.03440163558199},"placeId":"ChIJKa0P83zlwokRf14bxyJOHLg"},
+            {"title":"SPORTIVA SKI OUTLET NYC","address1":"217 E 60th St","address2":"Lower Level, NY 10065, USA","coords":{"lat":40.76203008158588,"lng":-73.96521116441802},"placeId":"ChIJbUw39chZwokRMoLflG2jRuM"},
+            {"title":"Burton New York City Flagship Store","address1":"69 Greene St","address2":"New York, NY 10012, USA","coords":{"lat":40.72337083256716,"lng":-74.00101763558197},"placeId":"ChIJVwErro5ZwokReK-jzwo3MMo"},
+            {"title":"Bomber Ski","address1":"681 5th Ave Penthouse","address2":"New York, NY 10022, USA","coords":{"lat":40.76068978418956,"lng":-73.97532560674591},"placeId":"ChIJnY8sBPtYwokRvx-82eFD4L8"},
+            {"title":"Surefoot","address1":"1438 3rd Ave FRNT 1","address2":"New York, NY 10028, USA","coords":{"lat":40.77605382398445,"lng":-73.95627536441803},"placeId":"ChIJT74ngL5YwokR0jPrVL3XJR8"},
+            {"title":"LEASE-A-SKI N Y C","address1":"215 E 60th St","address2":"New York, NY 10065, USA","coords":{"lat":40.7620367184374,"lng":-73.9652108067459},"placeId":"ChIJVTRkiwZZwokRKRMV2k2Gw8E"},
+            {"title":"REI","address1":"303 Lafayette St","address2":"New York, NY 10012, USA","coords":{"lat":40.72484921581947,"lng":-73.99530233558197},"placeId":"ChIJ_T3ed49ZwokRg8Yem2Bi5Yc"}
+          ],
+          "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17,"mapId":""},
+          "mapsApiKey": "AIzaSyDQizig1B4TDfAiaRj3c2j8L6vcfIUk_I4",
+          "capabilities": {"input":true,"autocomplete":true,"directions":false,"distanceMatrix":true,"details":false,"actions":false}
+        };
+  
+        function initMap() {
+          new LocatorPlus(CONFIGURATION);
+        }
+      </script>
+      <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
+        {{#each locations}}
+          <li class="location-result" data-location-index="{{index}}">
+            <button class="select-location">
+              <h2 class="name">{{title}}</h2>
+            </button>
+            <div class="address">{{address1}}<br>{{address2}}</div>
+            {{#if travelDistanceText}}
+              <div class="distance">{{travelDistanceText}}</div>
+            {{/if}}
+            <a class="directions-button" href="" target="_blank" title="Get directions to this location on Google Maps">
+              <svg width="34" height="34" viewBox="0 0 34 34"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.5867 9.24375L17.9403 8.8902V8.8902L17.5867 9.24375ZM16.4117 9.24375L16.7653 9.59731L16.7675 9.59502L16.4117 9.24375ZM8.91172 16.7437L8.55817 16.3902L8.91172 16.7437ZM8.91172 17.9229L8.55817 18.2765L8.55826 18.2766L8.91172 17.9229ZM16.4117 25.4187H16.9117V25.2116L16.7652 25.0651L16.4117 25.4187ZM16.4117 25.4229H15.9117V25.63L16.0582 25.7765L16.4117 25.4229ZM25.0909 17.9229L25.4444 18.2765L25.4467 18.2742L25.0909 17.9229ZM25.4403 16.3902L17.9403 8.8902L17.2332 9.5973L24.7332 17.0973L25.4403 16.3902ZM17.9403 8.8902C17.4213 8.3712 16.5737 8.3679 16.0559 8.89248L16.7675 9.59502C16.8914 9.4696 17.1022 9.4663 17.2332 9.5973L17.9403 8.8902ZM16.0582 8.8902L8.55817 16.3902L9.26527 17.0973L16.7653 9.5973L16.0582 8.8902ZM8.55817 16.3902C8.0379 16.9105 8.0379 17.7562 8.55817 18.2765L9.26527 17.5694C9.13553 17.4396 9.13553 17.227 9.26527 17.0973L8.55817 16.3902ZM8.55826 18.2766L16.0583 25.7724L16.7652 25.0651L9.26517 17.5693L8.55826 18.2766ZM15.9117 25.4187V25.4229H16.9117V25.4187H15.9117ZM16.0582 25.7765C16.5784 26.2967 17.4242 26.2967 17.9444 25.7765L17.2373 25.0694C17.1076 25.1991 16.895 25.1991 16.7653 25.0694L16.0582 25.7765ZM17.9444 25.7765L25.4444 18.2765L24.7373 17.5694L17.2373 25.0694L17.9444 25.7765ZM25.4467 18.2742C25.9631 17.7512 25.9663 16.9096 25.438 16.3879L24.7354 17.0995C24.8655 17.2279 24.8687 17.4363 24.7351 17.5716L25.4467 18.2742Z" fill="#1967d2"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19 19.8333V17.75H15.6667V20.25H14V16.9167C14 16.4542 14.3708 16.0833 14.8333 16.0833H19V14L21.9167 16.9167L19 19.8333Z" fill="#1967d2"/>
+                <circle class="directions-button-background" cx="17" cy="17" r="16.5" stroke="#1967d2"/>
+              </svg>
+            </a>
+          </li>
+        {{/each}}
+      </script> -->
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <!-- <body>
+        <div id="map-container">
+          <div id="locations-panel">
+            <div id="locations-panel-list">
+              <header>
+                <h1 class="search-title">
+                  <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
+                  Find a location near you
+                </h1>
+                <div class="search-input">
+                  <input id="location-search-input" placeholder="Enter your address or zip code">
+                  <div id="search-overlay-search" class="search-input-overlay search">
+                    <button id="location-search-button">
+                      <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search"/>
+                    </button>
+                  </div>
+                </div>
+              </header>
+              <div class="section-name" id="location-results-section-name">
+                All locations
+              </div>
+              <div class="results">
+                <ul id="location-results-list"></ul>
+              </div>
+            </div>
+          </div>
+          <div id="gmp-map"></div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=REACT_APP_API_KEY&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v6_cABD" async defer></script>
+      </body> -->
+    </div>
+    
+  </body>
+</html>
+
+
