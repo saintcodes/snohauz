@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FormControl, InputLabel, Input, Rating, Box, Button, Typography, Grid, Stack } from '@mui/material'
 
-function Reviews({user, refreshReview, handleDelete, setRefreshReview, renderNew, reviews, setReviews, product}) {
+function Reviews({user, refreshReview, handleDelete, setRefreshReview, renderNewReview, reviews, setReviews, product}) {
   const [open, setOpen] = useState(true)
   const [formData, setFormData] = useState({
     rating: 0.0,
@@ -23,7 +23,7 @@ function Reviews({user, refreshReview, handleDelete, setRefreshReview, renderNew
         product_id: product.id
       })
     }).then(res => res.json())
-    .then(review => renderNew(review))
+    .then(review => renderNewReview(review))
     setFormData({
       rating: 0.0,
       comment: ""
@@ -55,7 +55,8 @@ function Reviews({user, refreshReview, handleDelete, setRefreshReview, renderNew
           sx={{
             border: 1,
             borderColor: 'primary.main',
-            // backgroundColor: 'blue',
+            backgroundColor: 'white',
+            opacity: "0.9",
             borderRadius: '16px',
             width: "200%"
             // maxWidth: "300px"

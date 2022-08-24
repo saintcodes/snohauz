@@ -11,12 +11,14 @@ function Products({user, product}) {
   const [refreshReview, setRefreshReview] = useState(false)
 
   useEffect(() => {
+    console.log('hello')
     fetch(`/reviews/${product.id}`)
     .then(res => res.json())
     .then(reviews => setReviews(reviews))
   }, [refreshReview])
 
-  const renderNew = (review) => {
+  window.scrollTo(0,0)
+  const renderNewReview = (review) => {
     setReviews([...reviews, review])
   }
 
@@ -43,7 +45,13 @@ function Products({user, product}) {
   }
 
   return (
-    <>
+    <div style={{
+      backgroundImage: "url('https://images.pexels.com/photos/290452/pexels-photo-290452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+      height: '250vh',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+    }}>
       <Container>
         <div style={{
           position: "absolute",
@@ -67,7 +75,7 @@ function Products({user, product}) {
           <div style={{position: "relative", marginLeft: 400, marginTop: -330, marginRight: 280}}>
             <h4><em>{product.description}</em></h4>
             <p>
-              <h3>Price: ${product.price}</h3>
+              <h3>MSRP: ${product.price}</h3>
               <h3>Rental Rate: ${product.rental_rate}/day</h3>
               <br/>
               <br/>
@@ -77,7 +85,7 @@ function Products({user, product}) {
               variant={show ? "outlined" : "contained"}
               onClick={() => renderProductShops(product)}
             >
-              {show ? "Hide Shops": "Rentals"}
+              {show ? "Hide Shops": "Rental Shops"}
             </Button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Button
@@ -103,14 +111,14 @@ function Products({user, product}) {
           handleDelete={handleDelete}
           refreshReview={refreshReview}
           setRefreshReview={setRefreshReview}
-          renderNew={renderNew}
+          renderNewReview={renderNewReview}
           user={user} 
           product={product} 
           reviews={reviews}
           setReviews={setReviews}
         /> : null}
       </Container>
-    </>
+    </div>
   )
 }
 

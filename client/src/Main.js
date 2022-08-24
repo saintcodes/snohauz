@@ -28,9 +28,10 @@ function Main({user, selectedProduct, selectedShop}) {
   const handleProductSearch = (e) => {setSearchProduct(e.target.value)}
 
   function renderProduct(product) {
+    console.log(product.id)
     fetch(`products/${product.id}`)
       .then(res => res.json())
-      .then(selectedProduct)
+      .then(selectedProduct(product))
       .then(navigate(`/products/${product.name}`))
   }
 
@@ -166,7 +167,8 @@ function Main({user, selectedProduct, selectedShop}) {
               position: "relative", 
               top: 0,
               left: 0,
-              backgroundColor: 'transparent'
+              backgroundColor: 'transparent',
+              opacity: "0.9"
             }} 
             cols={6}
             gap={20}

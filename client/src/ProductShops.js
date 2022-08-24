@@ -59,7 +59,6 @@ function ProductShops({user, product, productShops}) {
       .then(navigate('/reservations'))
   }
 
-  console.log(navigate)
   return (
     <Stack 
       spacing={2}

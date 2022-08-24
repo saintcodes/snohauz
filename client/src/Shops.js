@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Button, Container } from '@mui/material'
 import ShopProducts from './ShopProducts'
 
-
 function Shops({user, shop}) {
   const [shopProducts, setShopProducts] = useState([])
   const [show, setShow] = useState(false)
@@ -15,7 +14,13 @@ function Shops({user, shop}) {
   }
 
   return ( 
-    <>
+    <div style={{
+      backgroundImage: "url('https://images.pexels.com/photos/290452/pexels-photo-290452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+      height: '250vh',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+    }}>
       <Container>
         <div style={{
           position: "absolute",
@@ -68,7 +73,7 @@ function Shops({user, shop}) {
           shopProducts={shopProducts}
         /> : null}
       </Container>
-    </>
+    </div>
   )
 }
 

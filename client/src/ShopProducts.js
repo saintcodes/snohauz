@@ -78,7 +78,8 @@ function ShopProducts({user, shopProducts, shop}) {
           sx={{
             border: 1,
             borderColor: 'primary.main',
-            backgroundColor: "yellow",
+            backgroundColor: "white",
+            opacity: "0.8",
             borderRadius: '16px',
             maxHeight: "400px"
           }}
