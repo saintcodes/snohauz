@@ -55,9 +55,9 @@ function Products({user, product}) {
       <Container>
         <div style={{
           position: "absolute",
-          marginLeft: 30,
+          marginLeft: 0,
           marginTop: 30,
-          marginRight: 15,
+          marginRight: 0,
           // backgroundColor: 'gray',
           // opacity: "0.7",
           color: "white"

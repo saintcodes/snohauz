@@ -89,7 +89,7 @@ function ShopProducts({user, shopProducts, shop}) {
             src={product.image} 
             alt={product.name}
           />
-          <div style={{position: "relative", left: 450, top: -340, maxWidth: "60%"}}>
+          <div style={{position: "relative", left: 450, top: -370, maxWidth: "60%"}}>
             <h3>{product.name}</h3>
             <span>{product.description}</span>
             <br/>
