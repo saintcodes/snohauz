@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Container } from '@mui/material'
 import ShopProducts from './ShopProducts'
 
-function Shops({user, shop}) {
+function Shops({user, shop, refreshReso, setRefreshReso}) {
   const [shopProducts, setShopProducts] = useState([])
   const [show, setShow] = useState(false)
 
@@ -53,9 +53,9 @@ function Shops({user, shop}) {
             <br/><br/>
             Address:
             <br/>
-            {/* {shop.shop_address.street}
+            217 E 60th St Lower Level
             <br/>
-            {shop.shop_address.city}, {shop.shop_address.state}&nbsp;{shop.shop_address.zip_code} */}
+            New York, NY 10065
             <br/><br/>
             <Button 
               id={shop.id} 
@@ -73,6 +73,8 @@ function Shops({user, shop}) {
           user={user} 
           shop={shop} 
           shopProducts={shopProducts}
+          refreshReso={refreshReso}
+          setRefreshReso={setRefreshReso}
         /> : null}
       </Container>
     </div>

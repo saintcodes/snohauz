@@ -15,6 +15,7 @@ function App() {
   const [user, setUser] = useState({})
   const [shop, setShop] = useState({})
   const [product, setProduct] = useState({})
+  const [refreshReso, setRefreshReso] = useState(true)
 
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -27,7 +28,7 @@ function App() {
   const selectedShop = (shop) => {setShop(shop)}
   const selectedProduct = (product) => {setProduct(product)}
 
-  if (!user) return <Login />
+  // if (!user) return <Login />
 
   return (
     <div>
@@ -38,6 +39,12 @@ function App() {
       /> : <></>
     }
       <Routes>
+        <Route 
+          exact path="/"
+          element={<Login
+            setUser={setUser}
+          />}
+        />
         <Route 
           exact path="/sign-up"
           element={<SignUp 
@@ -55,6 +62,8 @@ function App() {
           exact path="/reservations"
           element={<Reservations 
             user={user}
+            refreshReso={refreshReso}
+            setRefreshReso={setRefreshReso}
           />}
         />
         <Route 
@@ -62,6 +71,8 @@ function App() {
           element={<Products 
             user={user}
             product={product}
+            refreshReso={refreshReso}
+            setRefreshReso={setRefreshReso}
           />}
         />
         <Route 
@@ -69,6 +80,8 @@ function App() {
           element={<Shops 
             user={user}
             shop={shop}
+            refreshReso={refreshReso}
+            setRefreshReso={setRefreshReso}
           />}
         />
         <Route 
@@ -85,12 +98,6 @@ function App() {
             user={user}
           />}
         /> */}
-        <Route 
-          exact path="/"
-          element={<Login
-            setUser={setUser}
-          />}
-        />
       </Routes>
   </div>
   );

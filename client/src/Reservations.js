@@ -5,9 +5,9 @@ import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DeleteIcon from '@mui/icons-material/Delete'
 
-function Reservations() {
+function Reservations({refreshReso, setRefreshReso}) {
   const [reservations, setReservations] = useState([])
-  const [refreshReso, setRefreshReso] = useState(true)
+  // const [refreshReso, setRefreshReso] = useState(true)
   const [expanded, setExpanded] = useState(false)
   const [selectedRes, setSelectedRes] = useState()
 
@@ -18,6 +18,7 @@ function Reservations() {
   }, [refreshReso])
   
   window.scrollTo(0,0)
+  
 
   const handleExpandClick = (e, reservation) => {
     setSelectedRes(parseInt(e.target.id))

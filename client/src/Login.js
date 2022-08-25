@@ -28,7 +28,7 @@ function Login({ setUser }) {
       body: JSON.stringify(formData),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => setUser(user))
         navigate("/main")
         console.log('whatsup')
       } else {

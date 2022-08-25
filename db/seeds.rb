@@ -325,14 +325,14 @@ res2 = Reservation.create(
   time: "07:30 AM"
 )
 res3 = Reservation.create(
-  user_id: u1.id,
+  user_id: u2.id,
   product_id: p2.id,
   shop_id: s1.id,
   date: "August 28th 2022",
   time: "09:00 AM"
 )
 res4 = Reservation.create(
-  user_id: u1.id,
+  user_id: u2.id,
   product_id: p3.id,
   shop_id: s1.id,
   date: "August 29th 2022",

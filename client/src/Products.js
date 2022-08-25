@@ -3,7 +3,7 @@ import { Button, Container } from '@mui/material'
 import ProductShops from './ProductShops'
 import Reviews from './Reviews'
 
-function Products({user, product}) {
+function Products({user, product, refreshReso, setRefreshReso}) {
   const [productShops, setProductShops] = useState([])
   const [show, setShow] = useState(false)
   const [showReviews, setShowReviews] = useState(false)
@@ -108,6 +108,8 @@ function Products({user, product}) {
           user={user} 
           product={product} 
           productShops={productShops}
+          refreshReso={refreshReso}
+          setRefreshReso={setRefreshReso}
         /> : null}
         {showReviews ? 
         <Reviews

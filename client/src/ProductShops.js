@@ -5,7 +5,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { useNavigate } from 'react-router-dom'
 
-function ProductShops({user, product, productShops}) {
+function ProductShops({user, product, refreshReso, setRefreshReso, productShops}) {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null)
@@ -55,7 +55,7 @@ function ProductShops({user, product, productShops}) {
       })
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(refreshReso => setRefreshReso(!refreshReso))
       .then(navigate('/reservations'))
   }
 
