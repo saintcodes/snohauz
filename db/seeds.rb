@@ -282,6 +282,25 @@ p14 = Product.create(
   image: "https://images.evo.com/imgp/700/200447/920621/salomon-radium-pro-goggles-.jpg",
   shop_id: s1.id
 )
+p15 = Product.create(
+  category: "Gloves",
+  name: "Hestra Wakayama 5-Finger Gloves",
+  price: 160,
+  rental_rate: 8,
+  description: "Vintage style meets modern craftsmanship with the Hestra Wakayama 5-Finger Gloves. With a hearty impregnated cowhide outer material and a removable terry wool lining, these boutique-inspired gloves have the legacy construction and durability durable quality you demand from your go-to winter gloves.",
+  image: "https://images.evo.com/imgp/700/224314/943806/hestra-wakayama-5-finger-gloves-.jpg",
+  shop_id: s8.id
+)
+p16 = Product.create(
+  category: "Gloves",
+  name: "Hestra heated Mitt Liner",
+  price: 320,
+  rental_rate: 16,
+  description: "Your Hestra mitts are awesome, but, your hands still get cold when the winds are really blowing and the snow is coming down in icy sheets. Get yourself the battery-powered Hestra Heated Mitt Liners to layer under your mitts and all your frozen-finger problems will fade away. Made with a durable ripstop fabric, Fiberfill insulation and brushed polyester lining, these glove ovens feature three heat levels so you can stay in control when the weather changes.",
+  image: "https://images.evo.com/imgp/700/120700/531279/hestra-heated-mitt-liner-.jpg",
+  shop_id: s4.id
+)
+
 
 puts 'seeding Reviews'
 r1 = Review.create(

@@ -81,7 +81,8 @@ function ShopProducts({user, refreshReso, setRefreshReso, shopProducts, shop}) {
             backgroundColor: "white",
             opacity: "0.8",
             borderRadius: '16px',
-            maxHeight: "400px"
+            maxHeight: "400px",
+            overflow: 'hidden'
           }}
         >
           <img 

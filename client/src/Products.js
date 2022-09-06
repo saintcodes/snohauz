@@ -63,6 +63,8 @@ function Products({user, product, refreshReso, setRefreshReso}) {
           color: "white"
         }}>
         <br/><br/>
+        <a style={{color: 'white'}} href="/main">Back to Main</a>
+          <br/>
           <h1>{product.name}</h1>
         <img 
           style={{

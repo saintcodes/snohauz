@@ -31,6 +31,8 @@ function Shops({user, shop, refreshReso, setRefreshReso}) {
           marginRight: 0
         }}>
           <br/><br/>
+          <a style={{color: 'blue'}}href="/main">Back to Main</a>
+          <br/>
             <h1>{shop.name}</h1>
           <img 
             style={{
