@@ -70,7 +70,7 @@ function UserProfile({setUser, user}) {
       <br/>
       <p>{user.bio}</p>
       <br/>
-     <div><img style={{maxWidth: 250}} alt="user" src={user.image}/></div>
+      {user.image ? <div><img style={{maxWidth: 250}} alt="user" src={user.image}/></div> : "Upload a photo now!"}
       <br/>
       <Button onClick={handleOpen} variant="contained" color="warning">Edit Photo</Button>
       {open ? <Modal

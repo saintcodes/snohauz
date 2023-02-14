@@ -118,7 +118,7 @@ function Navigate({user, setUser}) {
         </DrawerHeader>
         <div>
           <h3 style={{align: "center", justifyContent: "center", alignItems: "center", alignContent: "center"}}>{user.username}</h3>
-          <img style={{maxWidth: 250}} alt="user" src={user.image}/></div>
+          {user.image ? <img style={{maxWidth: 250}} alt="user" src={user.image}/> : null}</div>
         <Divider />
         <List>
           {['Main', 'Reservations', 'Profile'].map((text, index) => (
