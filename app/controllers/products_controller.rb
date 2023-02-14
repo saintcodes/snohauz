@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   #   render json: products, status: :ok
   # end
 
-
   # def index
   #   products = Product.all.distinct.pluck(:name)
   #   render json: products, status: :ok

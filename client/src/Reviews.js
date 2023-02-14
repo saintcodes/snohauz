@@ -129,6 +129,17 @@ function Reviews({user, refreshReview, handleDelete, setRefreshReview, renderNew
               onChange={handleChange}
             />
             <br/>
+            <Button
+              variant="contained"
+              component="label"
+            >
+              Upload Image
+              <input
+                type="file"
+                hidden
+              />
+            </Button>
+              <br/>
             <Box>
               <Button 
                   onClick={() => setOpen(!open)} 

@@ -21,12 +21,11 @@ function Reservations({refreshReso, setRefreshReso}) {
   
 
   const handleExpandClick = (e, reservation) => {
+    console.log(e.target.id)
     setSelectedRes(parseInt(e.target.id))
     reservations.map((reservation) => {
       if (reservation.id === selectedRes) {
-        setExpanded(!expanded)
-      } else {
-        console.log('testing')
+        setExpanded(expanded => !expanded)
       }
     })
   }

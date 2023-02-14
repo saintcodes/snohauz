@@ -45,7 +45,7 @@ function Login({ setUser }) {
     <div className="formTitleLink3">
       <div>
           <video id="background-video"  autoPlay loop muted>
-        <source src='https://cdn.videvo.net/videvo_files/video/free/2014-01/large_watermarked/Snowboarding_offpiste_preview.mp4' type="video/mp4"/>
+        <source src='https://joy1.videvo.net/videvo_files/video/free/2019-06/large_watermarked/190404_05_Skiing_HD_10_preview.mp4' type="video/mp4"/>
         </video>
         </div>
       <h1 id="brand-logo-login">snohaus</h1>

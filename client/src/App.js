@@ -92,12 +92,6 @@ function App() {
             selectedProduct={selectedProduct}
           />}
         />
-        {/* <Route 
-          exact path="/map"
-          element={<Map 
-            user={user}
-          />}
-        /> */}
       </Routes>
   </div>
   );

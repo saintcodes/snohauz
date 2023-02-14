@@ -11,7 +11,6 @@ function Products({user, product, refreshReso, setRefreshReso}) {
   const [refreshReview, setRefreshReview] = useState(false)
 
   useEffect(() => {
-    console.log('hello')
     fetch(`/reviews/${product.id}`)
     .then(res => res.json())
     .then(reviews => setReviews(reviews))

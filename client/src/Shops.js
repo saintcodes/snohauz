@@ -27,8 +27,11 @@ function Shops({user, shop, refreshReso, setRefreshReso}) {
         <div style={{
           position: "absolute",
           marginLeft: 0,
-          marginTop: 30,
-          marginRight: 0
+          marginTop: 40,
+          marginBottom: 120,
+          marginRight: 0,
+          backgroundColor: 'white',
+          opacity: 0.8
         }}>
           <br/><br/>
           <a style={{color: 'blue'}}href="/main">Back to Main</a>

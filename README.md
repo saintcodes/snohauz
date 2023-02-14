@@ -24,8 +24,11 @@ Things you may want to cover:
 * ... -->
 
 
+In Console, run:
 ## npm start --prefix client
 to start front-end server
-
+## rails db:seed
+to seed data
 ## rails s
 to start back-end server
+

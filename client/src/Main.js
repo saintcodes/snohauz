@@ -28,7 +28,6 @@ function Main({user, selectedProduct, selectedShop}) {
   const handleProductSearch = (e) => {setSearchProduct(e.target.value)}
 
   function renderProduct(product) {
-    console.log(product.id)
     fetch(`products/${product.id}`)
       .then(res => res.json())
       .then(selectedProduct(product))
@@ -46,10 +45,6 @@ function Main({user, selectedProduct, selectedShop}) {
       backgroundImage: "url('https://images.pexels.com/photos/880497/pexels-photo-880497.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&dpr=1')",
       height:'220vh',
       width: '100vw',
-      // marginTop:'40px',
-      // zIndex: '-1',
-      // fontSize:'50px',
-      // objectFit: 'cover',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
       backgroundRepeat: 'no-repeat',
@@ -63,8 +58,6 @@ function Main({user, selectedProduct, selectedShop}) {
         marginTop: 10,
         marginRight: 15,
         backgroundColor: 'transparent',
-        // overflowX: 'hidden',
-        // overflowY: 'auto',
         paddingBottom: "0%",
         height: "200%",
         width: "100%"
@@ -75,7 +68,7 @@ function Main({user, selectedProduct, selectedShop}) {
         <hr/>
         <Box
           sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
+            '& .MuiTextField-root': { textTransform: 'uppercase', m: 3, width: '25%' }
           }}
           noValidate
           autoComplete="off"
@@ -99,8 +92,7 @@ function Main({user, selectedProduct, selectedShop}) {
               position: "relative", 
               top: 0,
               left: 0,
-              backgroundColor: 'transparent',
-              opacity: '0.95'
+              // backgroundColor: 'transparent'
             }} 
             cols={6}
             gap={20}
@@ -140,7 +132,7 @@ function Main({user, selectedProduct, selectedShop}) {
         <hr/>
         <Box
           sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
+            '& .MuiTextField-root': { textTransform: 'uppercase', m: 3, width: '25%' },
           }}
           noValidate
           autoComplete="off"
