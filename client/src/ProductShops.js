@@ -67,7 +67,7 @@ function ProductShops({user, product, refreshReso, setRefreshReso, productShops}
       sx={{
         position: "absolute",
         marginLeft: 0,
-        marginTop: 70,
+        marginTop: 80,
         marginRight: 15
       }}
     >

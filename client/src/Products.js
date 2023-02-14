@@ -57,14 +57,12 @@ function Products({user, product, refreshReso, setRefreshReso}) {
           marginLeft: 0,
           marginTop: 30,
           marginRight: 0,
-          // backgroundColor: 'gray',
-          // opacity: "0.7",
           color: "white"
         }}>
         <br/><br/>
         <a style={{color: 'white'}} href="/main">Back to Main</a>
-          <br/>
-          <h1>{product.name}</h1>
+        <br/>
+        <h1>{product.name}</h1>
         <img 
           style={{
             position: "relative",

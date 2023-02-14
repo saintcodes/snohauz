@@ -45,7 +45,7 @@ function Reviews({user, refreshReview, handleDelete, setRefreshReview, renderNew
       sx={{
         position: "absolute",
         marginLeft: 0,
-        marginTop: 70,
+        marginTop: 80,
         marginRight: 15
       }}
     >
