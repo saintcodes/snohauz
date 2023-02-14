@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { TextField, Box, IconButton, Stack, ImageList, ImageListItemBar, ImageListItem} from '@mui/material'
+import { TextField, Container, Box, IconButton, Stack, ImageList, ImageListItemBar, ImageListItem} from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info';
 import { useNavigate } from 'react-router-dom'
+import background from "./images/pexels-oleksandr-pidvalnyi-12955948.jpg"
 
+// client/public/pexels-oleksandr-pidvalnyi-12955948.jpg
 function Main({user, selectedProduct, selectedShop}) {
   const [shops, setShops] = useState([])
   const [products, setProducts] = useState([])
@@ -39,32 +41,28 @@ function Main({user, selectedProduct, selectedShop}) {
       .then(res => res.json())
       .then(selectedShop)
       .then(navigate(`/shops/${shop.name}`))
-    }
+  }
 
-    const myStyle={
-      backgroundImage: "url('https://images.pexels.com/photos/880497/pexels-photo-880497.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&dpr=1')",
-      height:'220vh',
+  const myStyle={
+      backgroundImage: `url(${background})`,
+      backgroundRepeat: 'no-repeat',
+      height:'350vh',
       width: '100vw',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
-      backgroundRepeat: 'no-repeat',
   };
   
   return (
     <div style={myStyle}>
-      <Stack sx={{
+      <Container fixed sx={{
         position: "absolute",
         marginLeft: 10,
         marginTop: 10,
         marginRight: 15,
-        backgroundColor: 'transparent',
-        paddingBottom: "0%",
-        height: "200%",
-        width: "100%"
       }}>
-          <span style={{fontSize: "x-large", color: 'white'}}>
-            <strong><em>All Shops</em></strong>
-          </span>
+        <div style={{fontSize: "x-large", color: 'white', margin: 'auto', alignText: 'center'}}>
+          <strong><em>All Shops</em></strong>
+        </div>
         <hr/>
         <Box
           sx={{
@@ -87,15 +85,13 @@ function Main({user, selectedProduct, selectedShop}) {
         </Box>
           <ImageList 
             sx={{ 
-              width: 1700, 
+              width: 1100, 
               height: 800, 
-              position: "relative", 
-              top: 0,
-              left: 0,
-              // backgroundColor: 'transparent'
+              justifyContent: 'center',
+              margin: "auto",
             }} 
-            cols={6}
-            gap={20}
+            cols={4}
+            gap={16}
           >
             {searchShops.map((shop) => (
               <ImageListItem
@@ -152,16 +148,13 @@ function Main({user, selectedProduct, selectedShop}) {
         </Box>
           <ImageList 
             sx={{ 
-              width: 1700, 
+              width: 1100, 
               height: 800, 
-              position: "relative", 
-              top: 0,
-              left: 0,
-              backgroundColor: 'transparent',
-              opacity: "0.95"
+              justifyContent: 'center', 
+              margin: 'auto'
             }} 
-            cols={5}
-            gap={20}
+            cols={4}
+            gap={16}
           >
             {searchProducts.map((product) => (
               <ImageListItem
@@ -185,12 +178,12 @@ function Main({user, selectedProduct, selectedShop}) {
                     <InfoIcon />
                   </IconButton>
                 }
-                sx={{height: 80}}
+                sx={{height: 75}}
               />
               </ImageListItem>
             ))}
           </ImageList> 
-      </Stack>
+      </Container>
     </div>
   )
 }
