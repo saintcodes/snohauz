@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    
     user = User.find_by(id: params[:user_id])
     if user
       user.update(user_params_update)

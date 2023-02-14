@@ -43,7 +43,6 @@ function UserProfile({setUser, user}) {
       })
     })
     setOpen(false)
-    console.log('hello')
   }
 
   function handleChange(e) {
